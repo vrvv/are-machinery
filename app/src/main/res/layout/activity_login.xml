@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/light_blue_gradiant"
+    android:orientation="vertical"
+    tools:context=".activities.LoginActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/pangram_bold"
+            android:gravity="center|bottom"
+            android:letterSpacing="0.08"
+            android:text="Sign In"
+            android:textColor="#323C4E"
+            android:textSize="28sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_40sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/_10sdp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:fontFamily="@font/pangram_medium"
+                android:text="Email/Mobile "
+                android:textColor="#323C4E"
+                android:textSize="12dp" />
+
+            <com.are.ui.NoChangingBackgroundTextInputLayout
+                android:id="@+id/ip_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+                app:boxBackgroundMode="none"
+                app:errorEnabled="false"
+                app:hintAnimationEnabled="false"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_email"
+                    style="@style/EditTextTheme"
+                    android:background="@drawable/rounded_white_bg"
+                    android:drawableLeft="@drawable/icon_user"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:hint="Enter your Email/Mobile" />
+            </com.are.ui.NoChangingBackgroundTextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/pangram_medium"
+                android:text="Password"
+                android:textColor="#323C4E"
+                android:textSize="12dp" />
+
+            <com.are.ui.NoChangingBackgroundTextInputLayout
+                android:id="@+id/ip_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+                app:boxBackgroundMode="none"
+                app:errorEnabled="false"
+                app:hintAnimationEnabled="false"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_password"
+                    style="@style/EditTextTheme"
+                    android:background="@drawable/rounded_white_bg"
+                    android:drawableLeft="@drawable/icon_password"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:hint="Enter password"
+                    android:inputType="textPassword" />
+            </com.are.ui.NoChangingBackgroundTextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_forgot"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_weight="1"
+                android:fontFamily="@font/pangram_medium"
+                android:gravity="right|center"
+                android:text="Forgot Password?"
+                android:textColor="#323C4E"
+                android:textSize="12dp" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/pangram_medium"
+                android:text="Remember me"
+                android:visibility="gone"
+                android:textColor="#323C4E"
+                android:textSize="12dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/btn_rounded_gray"
+                android:fontFamily="@font/pangram_bold"
+                android:gravity="center"
+                android:text="Sign In"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSignup"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:fontFamily="@font/pangram_medium"
+                android:gravity="center"
+                android:text="@string/register"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

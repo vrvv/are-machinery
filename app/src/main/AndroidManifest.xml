@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.are">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".MyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ARE"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".activities.EmployeesListActivity"></activity>
+        <activity android:name=".activities.AddEmplyoyeeActivity" />
+        <activity android:name=".activities.VerifyActivity" />
+        <activity android:name=".activities.HistoryActivity" />
+        <activity android:name=".activities.ProductDetailActivity" />
+        <activity android:name=".activities.MachineryActivity" />
+        <activity android:name=".activities.EnquireActivity" />
+        <activity android:name=".activities.UnderReviewActivity" />
+        <activity android:name=".activities.SellTypeActivity" />
+        <activity android:name=".activities.SellActivity" />
+        <activity android:name=".activities.DashboardActivity" />
+        <activity android:name=".activities.SetupPasswordActivity" />
+        <activity android:name=".activities.OTPActivity" />
+        <activity android:name=".activities.RegisterActivity" />
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/light_blue_gradiant"
+    android:orientation="vertical"
+    tools:context=".activities.LoginActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="@dimen/_42sdp"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_centerVertical="true"
+            android:background="?selectableItemBackgroundBorderless"
+            android:padding="@dimen/_10sdp"
+            app:srcCompat="@drawable/icon_back"
+            tools:ignore="VectorDrawableCompat" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/pangram_bold"
+            android:gravity="center|bottom"
+            android:letterSpacing="0.08"
+            android:text="Sign Up"
+            android:textColor="#323C4E"
+            android:textSize="28sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_40sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/_10sdp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pangram_medium"
+                android:text="Name"
+                android:textColor="#323C4E"
+                android:textSize="12dp" />
+
+            <com.are.ui.NoChangingBackgroundTextInputLayout
+                android:id="@+id/ip_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+                app:boxBackgroundMode="none"
+                app:errorEnabled="false"
+                app:hintAnimationEnabled="false"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_name"
+                    style="@style/EditTextTheme"
+                    android:background="@drawable/rounded_white_bg"
+                    android:drawableLeft="@drawable/icon_user"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:hint="Enter your Name" />
+            </com.are.ui.NoChangingBackgroundTextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/pangram_medium"
+                android:text="Company/Business Name"
+                android:visibility="gone"
+                android:textColor="#323C4E"
+                android:textSize="12dp" />
+
+            <com.are.ui.NoChangingBackgroundTextInputLayout
+                android:id="@+id/ip_company_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+                app:boxBackgroundMode="none"
+                app:errorEnabled="false"
+                android:visibility="gone"
+                app:hintAnimationEnabled="false"
+                app:hintEnabled="false">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/act_company_name"
+                    style="@style/EditTextTheme"
+                    android:background="@drawable/rounded_white_bg"
+                    android:drawableLeft="@drawable/icon_password"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:hint="Enter Company/Business Name" />
+            </com.are.ui.NoChangingBackgroundTextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/pangram_medium"
+                android:text="Email"
+                android:textColor="#323C4E"
+                android:textSize="12dp" />
+
+            <com.are.ui.NoChangingBackgroundTextInputLayout
+                android:id="@+id/ip_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+                app:boxBackgroundMode="none"
+                app:errorEnabled="false"
+                app:hintAnimationEnabled="false"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_email"
+                    style="@style/EditTextTheme"
+                    android:background="@drawable/rounded_white_bg"
+                    android:drawableLeft="@drawable/icon_email"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:hint="Enter your Email"
+                    android:inputType="textEmailAddress" />
+            </com.are.ui.NoChangingBackgroundTextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/pangram_medium"
+                android:text="Enter Mobile Number"
+                android:textColor="#323C4E"
+                android:textSize="12dp" />
+
+            <com.are.ui.NoChangingBackgroundTextInputLayout
+                android:id="@+id/ip_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+                app:boxBackgroundMode="none"
+                app:errorEnabled="false"
+                app:hintAnimationEnabled="false"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_mobile"
+                    style="@style/EditTextTheme"
+                    android:background="@drawable/rounded_white_bg"
+                    android:drawableLeft="@drawable/icon_mobile"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:hint="Enter your Mobile Number"
+                    android:inputType="number"
+                    android:maxLength="10" />
+            </com.are.ui.NoChangingBackgroundTextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/pangram_medium"
+                android:text="Location"
+                android:textColor="#323C4E"
+                android:textSize="12dp"
+                android:visibility="gone" />
+
+            <com.are.ui.NoChangingBackgroundTextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+                android:visibility="gone"
+                app:boxBackgroundMode="none"
+                app:errorEnabled="false"
+                app:hintAnimationEnabled="false"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/EditTextTheme"
+                    android:background="@drawable/rounded_white_bg"
+                    android:drawableLeft="@drawable/icon_password"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:hint="Enter your Location"
+                    android:inputType="textPassword" />
+            </com.are.ui.NoChangingBackgroundTextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/pangram_medium"
+                android:text="GST Number"
+                android:textColor="#323C4E"
+                android:textSize="12dp"
+                android:visibility="gone" />
+
+            <com.are.ui.NoChangingBackgroundTextInputLayout
+                android:id="@+id/ip_gst_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+                android:visibility="gone"
+                app:boxBackgroundMode="none"
+                app:errorEnabled="false"
+                app:hintAnimationEnabled="false"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_gst_no"
+                    style="@style/EditTextTheme"
+                    android:background="@drawable/rounded_white_bg"
+                    android:drawableLeft="@drawable/icon_password"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:hint="Enter GST Number" />
+            </com.are.ui.NoChangingBackgroundTextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_signup"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/btn_rounded_gray"
+                android:fontFamily="@font/pangram_bold"
+                android:gravity="center"
+                android:text="Sign Up"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSignup"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:fontFamily="@font/pangram_medium"
+                android:gravity="center"
+                android:text="@string/signin"
+                android:textSize="@dimen/_12sdp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

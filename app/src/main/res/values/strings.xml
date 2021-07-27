@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ARE</string>
+    <string name="register">Don&quot;t have an account? <b><u><font color='#F66F40'>Signup</font></u></b></string>
+    <string name="signin">Have an Account? <b><u><font color='#F66F40'> Sign In</font></u></b></string>
+    <string name="resend"><u>Resend Code</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="skip"><u>Skip for now</u></string>
+    <string name="verified_user"><u>Verified User</u></string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+</resources>
