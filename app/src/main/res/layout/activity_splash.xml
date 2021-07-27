@@ -15,8 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="@dimen/_14sdp"
-            android:src="@drawable/are_logo" />
+            android:layout_marginTop="@dimen/_14sdp" />
 
         <ImageView
             android:layout_width="wrap_content"
