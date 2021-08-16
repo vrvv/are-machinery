@@ -98,7 +98,6 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 android:fontFamily="@font/pangram_medium"
                 android:text="Company/Business Name"
-                android:visibility="gone"
                 android:textColor="#323C4E"
                 android:textSize="12dp" />
 
@@ -110,15 +109,14 @@
                 android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
                 app:boxBackgroundMode="none"
                 app:errorEnabled="false"
-                android:visibility="gone"
                 app:hintAnimationEnabled="false"
                 app:hintEnabled="false">
 
-                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/act_company_name"
                     style="@style/EditTextTheme"
                     android:background="@drawable/rounded_white_bg"
-                    android:drawableLeft="@drawable/icon_password"
+                    android:drawableLeft="@drawable/icon_company"
                     android:drawablePadding="@dimen/_10sdp"
                     android:hint="Enter Company/Business Name" />
             </com.are.ui.NoChangingBackgroundTextInputLayout>

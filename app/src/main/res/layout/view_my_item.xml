@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:orientation="vertical">
 
@@ -10,9 +11,11 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image"
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_70sdp"
+            app:shapeAppearanceOverlay="@style/circleImageView"
             android:layout_margin="@dimen/_10sdp"
             android:scaleType="fitXY"
             android:src="@drawable/img_machine" />
@@ -25,30 +28,33 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
                 android:text="Dozer Hitachi 2020 model HVMX001 Model"
                 android:textColor="@color/black"
                 android:textSize="11sp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="$24,50,500"
+                android:textColor="#000000"
+                android:textSize="12sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_company_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
                 android:fontFamily="@font/poppins"
                 android:text="Sri Ramesh Mukharjee Traders"
-                android:textColor="#33383A"
+                android:textColor="#F66F40"
                 android:textSize="10sp" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_2sdp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="$24,50,500"
-                android:textColor="#FF1704"
-                android:textSize="12sp" />
 
 
         </LinearLayout>
@@ -65,7 +71,7 @@
         android:weightSum="3">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_next"
+            android:id="@+id/btn_close"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_25sdp"
             android:layout_marginRight="@dimen/_10sdp"
@@ -79,6 +85,7 @@
             android:textSize="12sp" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_edit"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_25sdp"
             android:layout_marginRight="@dimen/_10sdp"
@@ -92,6 +99,7 @@
             android:textSize="12sp" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_enquire"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_25sdp"
            android:layout_weight="1"

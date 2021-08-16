@@ -30,10 +30,23 @@ public class AppConstants {
         public static final String RESEND_OTP = "/mobile/otp/resend/{number}/{otp}";
         public static final String REGISTER = "/user/register";
         public static final String DEVICE_ADD = "/user/device/add";
+        public static final String USER_STATUS = "/user/status/{userId}";
+        public static final String COMPANY_STATUS = "/company/status/{companyId}";
+        public static final String ADD_COMPANY = "/company/docs";
 
         //Dashboard
         public static final String ADD_ITEM = "/item/add";
         public static final String GET_ITEM = "/items/list";
         public static final String ITEM_DETAIL = "/item/details/{itemId}/{userId}";
+        public static final String GET_EQUIPMENT = "/equipments/list";
+        public static final String MY_ITEM = "/items/{userId}";
+        public static final String CLOSE_ITEM = "item/close/{itemId}/{userId}";
+
+        public static final String ADD_ENQUIRY = "/item/add/itemenquiry";
+        public static final String MY_ITEM_ENQUIRY = "/item/enquiries/{itemId}";
+        public static final String MY_ENQUIRY = "/enquiries/{userId}";
+
+        public static final String MY_EMPLOYEE = "/employees/list/{companyId}";
+        public static final String ADD_EMPLOYEE = "/employee/add";
     }
 }

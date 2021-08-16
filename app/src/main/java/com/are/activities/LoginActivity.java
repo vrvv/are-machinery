@@ -1,13 +1,18 @@
 package com.are.activities;
 
+import android.Manifest;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatTextView;
+import androidx.core.app.ActivityCompat;
 
 import com.are.MyApp;
 import com.are.R;
@@ -36,6 +41,8 @@ public class LoginActivity extends AppCompatActivity {
     public TextInputEditText et_email, et_password;
     public NoChangingBackgroundTextInputLayout ip_email, ip_password;
     public Dialog loder;
+    String[] PERMISSIONS = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
+    int PERMISSION_ALL = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +50,9 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         context = this;
         initView();
+        if (!hasPermissions(this, PERMISSIONS)) {
+            ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
+        }
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,6 +66,17 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    public static boolean hasPermissions(Context context, String... permissions) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null) {
+            for (String permission : permissions) {
+                if (ActivityCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     private void validation() {
@@ -103,10 +124,73 @@ public class LoginActivity extends AppCompatActivity {
                     MyApp.mySharedPref.setUserModel(json);
                     MyApp.mySharedPref.setIsLoggedIn(true);
                     MyApp.mySharedPref.setUserId(String.valueOf(MyApp.user.getUserId()));
+                    hitUserStatus(response.data);
+                } else {
                     ToastUtils.show(context, response.message);
-                    Intent i = new Intent(context, DashboardActivity.class);
-                    startActivity(i);
-                    finish();
+                }
+            }
+        });
+    }
+
+    private void hitUserStatus(MainUser mainUser) {
+        if (!NetworkUtil.getInstance(context).isConnected()) {
+            ToastUtils.show(context, "No internet");
+            return;
+        }
+        Call<ResponseModel<Boolean>> call = RestServiceFactory.createServiceUser().getUserStatus(mainUser.getUserId());
+        call.enqueue(new RestCallBack<ResponseModel<Boolean>>(context) {
+            @Override
+            public void onFailure(Call<ResponseModel<Boolean>> call, String message) {
+                loder.dismiss();
+                ToastUtils.show(context, message);
+                LogHelper.d("Failure", "onFailure FormField  : ");
+            }
+
+            @Override
+            public void onResponse(Call<ResponseModel<Boolean>> call, Response<ResponseModel<Boolean>> restResponse, ResponseModel<Boolean> response) {
+                loder.dismiss();
+                if (response.isSuccess) {
+                    if (response.data) {
+                        hitCompanyStatus(mainUser);
+
+                    } else {
+                        ToastUtils.show(context, "Your Account has been removed");
+
+                    }
+                } else {
+                    ToastUtils.show(context, response.message);
+                }
+            }
+        });
+    }
+
+    private void hitCompanyStatus(MainUser mainUser) {
+        if (!NetworkUtil.getInstance(context).isConnected()) {
+            ToastUtils.show(context, "No internet");
+            return;
+        }
+        Call<ResponseModel<String>> call = RestServiceFactory.createServiceUser().getCompanyStatus(mainUser.getCompanyId());
+        call.enqueue(new RestCallBack<ResponseModel<String>>(context) {
+            @Override
+            public void onFailure(Call<ResponseModel<String>> call, String message) {
+                loder.dismiss();
+                ToastUtils.show(context, message);
+                LogHelper.d("Failure", "onFailure FormField  : ");
+            }
+
+            @Override
+            public void onResponse(Call<ResponseModel<String>> call, Response<ResponseModel<String>> restResponse, ResponseModel<String> response) {
+                loder.dismiss();
+                if (response.isSuccess) {
+                    if (response.data.equals("500")) {
+                        Intent i = new Intent(context, VerifyActivity.class);
+                        startActivity(i);
+                        finish();
+                    } else {
+                        Intent i = new Intent(context, DashboardActivity.class);
+                        startActivity(i);
+                        finish();
+                    }
                 } else {
                     ToastUtils.show(context, response.message);
                 }

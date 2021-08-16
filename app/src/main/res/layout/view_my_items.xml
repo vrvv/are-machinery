@@ -2,10 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/_10sdp"
@@ -20,10 +22,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image"
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_70sdp"
             android:layout_margin="@dimen/_10sdp"
+            app:shapeAppearanceOverlay="@style/circleImageView"
             android:scaleType="fitXY"
             android:src="@drawable/img_machine" />
 
@@ -35,6 +39,7 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
@@ -43,6 +48,7 @@
                 android:textSize="12sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
@@ -52,6 +58,7 @@
                 android:textSize="12sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCompanyName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
@@ -68,7 +75,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginRight="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_10sdp"
         android:orientation="horizontal"
@@ -80,6 +86,7 @@
             android:layout_height="@dimen/_30sdp"
             android:layout_marginRight="@dimen/_10sdp"
             android:layout_weight="0.5"
+            android:visibility="invisible"
             android:background="@drawable/btn_rounded_green_stroke"
             android:fontFamily="@font/pangram_regular"
             android:gravity="center"
@@ -88,15 +95,19 @@
             android:textColor="#49BD5C"
             android:textSize="11dp" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_call"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginLeft="@dimen/_10sdp"
             android:layout_weight="0.5"
+            android:padding="@dimen/_10sdp"
+            android:drawableLeft="@drawable/icon_white_call"
             android:background="@drawable/btn_rounded_green"
             android:fontFamily="@font/pangram_regular"
             android:gravity="center"
-            android:text="Contacted Supplier"
+            android:layout_gravity="center"
+            android:text="Contact"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="11dp" />

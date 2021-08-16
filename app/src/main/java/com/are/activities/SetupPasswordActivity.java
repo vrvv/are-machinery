@@ -68,6 +68,7 @@ public class SetupPasswordActivity extends AppCompatActivity {
             return;
         }
         MyApp.registerRequest.setPassword(pass);
+        MyApp.registerRequest.setGSTIN("");
         hitRegisterApi();
 
     }
@@ -92,6 +93,7 @@ public class SetupPasswordActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call<ResponseModel<String>> call, Response<ResponseModel<String>> restResponse, ResponseModel<String> response) {
+                loder.dismiss();
                 if (response.isSuccess) {
                     MyApp.mySharedPref.setUserId(response.data);
                     hitAddDeviceApi();
@@ -136,8 +138,9 @@ public class SetupPasswordActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call<ResponseModel<String>> call, Response<ResponseModel<String>> restResponse, ResponseModel<String> response) {
+                loder.dismiss();
                 if (response.isSuccess) {
-                    Intent i = new Intent(context, DashboardActivity.class);
+                    Intent i = new Intent(context, VerifyActivity.class);
                     startActivity(i);
                     finishAffinity();
 

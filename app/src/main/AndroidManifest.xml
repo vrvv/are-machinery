@@ -4,6 +4,9 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".MyApp"
@@ -14,7 +17,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ARE"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.EmployeesListActivity"></activity>
+        <activity android:name=".activities.AddSpareItemActivity"></activity>
+        <activity android:name=".activities.MyItemDetailActivity" />
+        <activity android:name=".activities.MyItemActivity" />
+        <activity android:name=".activities.UnderVerificationActivity" />
+        <activity android:name=".activities.EmployeesListActivity" />
         <activity android:name=".activities.AddEmplyoyeeActivity" />
         <activity android:name=".activities.VerifyActivity" />
         <activity android:name=".activities.HistoryActivity" />
@@ -22,7 +29,7 @@
         <activity android:name=".activities.MachineryActivity" />
         <activity android:name=".activities.EnquireActivity" />
         <activity android:name=".activities.UnderReviewActivity" />
-        <activity android:name=".activities.SellTypeActivity" />
+        <activity android:name=".activities.AddEquipmentItemActivity" />
         <activity android:name=".activities.SellActivity" />
         <activity android:name=".activities.DashboardActivity" />
         <activity android:name=".activities.SetupPasswordActivity" />
@@ -36,6 +43,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Base.Theme.AppCompat" />
     </application>
 
 </manifest>

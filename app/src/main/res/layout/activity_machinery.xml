@@ -19,7 +19,7 @@
             android:layout_height="@dimen/_50sdp">
 
             <ImageView
-                android:id="@+id/img_location"
+                android:id="@+id/img_back"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_48sdp"
                 android:padding="@dimen/_14sdp"
@@ -29,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@+id/img_location"
+                android:layout_toRightOf="@+id/img_back"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Machinary"
                 android:textColor="@color/black"
@@ -57,26 +57,13 @@
             android:layout_height="@dimen/_6sdp"
             android:background="#F7F7F8" />
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tab_layout"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app1:tabSelectedTextColor="#FF4200"
-            app:tabIndicator="@drawable/tab_indicator"
-            app:tabTextAppearance="@style/tab_text"
-            app:tabIndicatorColor="#FF4200"
-            app:tabTextColor="#606060"
-            >
-
-
-        </com.google.android.material.tabs.TabLayout>
-
-
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/view_pager"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvItemList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            custom:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            android:layout_below="@+id/view"
+            android:scrollbars="none"
+            tools:ignore="MissingConstraints" />
 
     </LinearLayout>
 

@@ -18,6 +18,7 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
@@ -26,6 +27,7 @@
                 android:textSize="18sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_mobile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
@@ -35,6 +37,7 @@
                 android:textSize="14sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"

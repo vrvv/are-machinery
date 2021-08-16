@@ -15,7 +15,7 @@
         android:background="#F7F7F8">
 
         <ImageView
-            android:id="@+id/img_location"
+            android:id="@+id/img_back"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_48sdp"
             android:padding="@dimen/_14sdp"
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/img_location"
+            android:layout_toRightOf="@+id/img_back"
             android:fontFamily="@font/poppins_semibold"
             android:text="Add Employees"
             android:textColor="@color/black"
@@ -41,7 +41,8 @@
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_above="@+id/btn_save">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -67,7 +68,7 @@
                         android:textSize="14dp" />
 
                     <com.are.ui.NoChangingBackgroundTextInputLayout
-                        android:id="@+id/ip_username"
+                        android:id="@+id/ip_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_5sdp"
@@ -78,7 +79,7 @@
                         app:hintEnabled="false">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/et_legel_name"
+                            android:id="@+id/et_name"
                             style="@style/EditTextThemeEnquiry"
                             android:background="@drawable/rounded_black_ring"
                             android:hint="Enter your Name" />
@@ -94,6 +95,7 @@
                         android:textSize="14dp" />
 
                     <com.are.ui.NoChangingBackgroundTextInputLayout
+                        android:id="@+id/ip_mobile"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_5sdp"
@@ -104,10 +106,12 @@
                         app:hintEnabled="false">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/et_pan_number"
+                            android:id="@+id/et_mobile"
                             style="@style/EditTextThemeEnquiry"
                             android:background="@drawable/rounded_black_ring"
-                            android:hint="Enter Mobile" />
+                            android:hint="Enter Mobile"
+                            android:inputType="number"
+                            android:maxLength="10" />
                     </com.are.ui.NoChangingBackgroundTextInputLayout>
 
 
@@ -121,6 +125,7 @@
                         android:textSize="14dp" />
 
                     <com.are.ui.NoChangingBackgroundTextInputLayout
+                        android:id="@+id/ip_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
@@ -129,11 +134,66 @@
                         app:hintAnimationEnabled="false"
                         app:hintEnabled="false">
 
-                        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
-                            android:id="@+id/act_company_name"
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_email"
                             style="@style/EditTextThemeEnquiry"
                             android:background="@drawable/rounded_black_ring"
-                            android:hint="Enter Email" />
+                            android:hint="Enter Email"
+                            android:inputType="textEmailAddress" />
+                    </com.are.ui.NoChangingBackgroundTextInputLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Password"
+                        android:textColor="#323C4E"
+                        android:textSize="14dp" />
+
+                    <com.are.ui.NoChangingBackgroundTextInputLayout
+                        android:id="@+id/ip_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+                        app:boxBackgroundMode="none"
+                        app:errorEnabled="false"
+                        app:hintAnimationEnabled="false"
+                        app:hintEnabled="false"
+                        app:passwordToggleEnabled="true">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_password"
+                            style="@style/EditTextThemeEnquiry"
+                            android:background="@drawable/rounded_black_ring"
+                            android:hint="Enter password"
+                            android:inputType="textPassword" />
+                    </com.are.ui.NoChangingBackgroundTextInputLayout>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="City"
+                        android:textColor="#323C4E"
+                        android:textSize="14dp" />
+
+                    <com.are.ui.NoChangingBackgroundTextInputLayout
+                        android:id="@+id/ip_city"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+                        app:boxBackgroundMode="none"
+                        app:errorEnabled="false"
+                        app:hintAnimationEnabled="false"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_city"
+                            style="@style/EditTextThemeEnquiry"
+                            android:background="@drawable/rounded_black_ring"
+                            android:hint="Enter city" />
                     </com.are.ui.NoChangingBackgroundTextInputLayout>
 
                     <androidx.appcompat.widget.AppCompatTextView
@@ -146,9 +206,11 @@
                         android:textSize="14dp" />
 
                     <com.are.ui.NoChangingBackgroundTextInputLayout
+                        android:id="@+id/ip_role"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_5sdp"
+                        android:focusable="false"
                         android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
                         app:boxBackgroundMode="none"
                         app:errorEnabled="false"
@@ -156,9 +218,11 @@
                         app:hintEnabled="false">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/et_gst_no"
+                            android:id="@+id/et_role_no"
                             style="@style/EditTextThemeEnquiry"
                             android:background="@drawable/rounded_black_ring"
+                            android:drawableRight="@drawable/icon_dropdown"
+                            android:focusable="false"
                             android:hint="Enter Role" />
                     </com.are.ui.NoChangingBackgroundTextInputLayout>
 
@@ -178,7 +242,7 @@
         </androidx.core.widget.NestedScrollView>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_next"
+            android:id="@+id/btn_save"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
             android:layout_alignParentBottom="true"

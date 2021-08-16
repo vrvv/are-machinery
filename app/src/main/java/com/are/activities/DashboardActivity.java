@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,6 +40,8 @@ public class DashboardActivity extends AppCompatActivity {
     public List<Items> itemsArrayList = new ArrayList<>();
     private FragmentDrawer drawerFragment;
     public ImageView img_menu;
+    public LinearLayout lin_everything, lin_spares, lin_equipment;
+    public RecomMachineryAdapter recomMachineryAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +52,13 @@ public class DashboardActivity extends AppCompatActivity {
         drawerFragment = (FragmentDrawer) getFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
         img_menu = findViewById(R.id.img_menu);
         setupDrawer();
+        lin_everything = findViewById(R.id.lin_everything);
+        lin_spares = findViewById(R.id.lin_spares);
+        lin_equipment = findViewById(R.id.lin_equipment);
         tv_sell_here = findViewById(R.id.tv_sell_here);
         btn_post_request = findViewById(R.id.btn_post_request);
         rvRecomMachinery = findViewById(R.id.rvRecomMachinery);
-        getItemList();
+        getItemList("1");
         tv_sell_here.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,16 +75,18 @@ public class DashboardActivity extends AppCompatActivity {
         });
 
     }
+
     public void setupDrawer() {
         drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), img_menu);
     }
-    private void getItemList() {
+
+    private void getItemList(String type) {
         getItemRequest.setBrand("");
         getItemRequest.setFromCount(0);
-        getItemRequest.setToCount(10);
-        getItemRequest.setItemType("");
-        getItemRequest.setLocation("Hydrabad");
-        getItemRequest.setLocation(MyApp.mySharedPref.getUserId());
+        getItemRequest.setToCount(6);
+        getItemRequest.setItemType(type);
+        getItemRequest.setLocation("Hyderabad");
+        getItemRequest.setUserid(Integer.parseInt(MyApp.mySharedPref.getUserId()));
         Call<ResponseModel<List<Items>>> callStates = RestServiceFactory.createServiceUser().getItem(getItemRequest);
 
         callStates.enqueue(new RestCallBack<ResponseModel<List<Items>>>(instance) {
@@ -91,8 +99,9 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResponseModel<List<Items>>> call, Response<ResponseModel<List<Items>>> restResponse, ResponseModel<List<Items>> response) {
                 if (response.isSuccess) {
+                    itemsArrayList.clear();
                     itemsArrayList.addAll(response.data);
-                    if(itemsArrayList.size()>0){
+                    if (itemsArrayList.size() > 0) {
                         setupRecyclerview();
 
                     }
@@ -105,13 +114,42 @@ public class DashboardActivity extends AppCompatActivity {
     }
 
     private void setupRecyclerview() {
-        RecomMachineryAdapter itemListDataAdapter =
+        recomMachineryAdapter =
                 new RecomMachineryAdapter(instance, itemsArrayList);
         rvRecomMachinery.setHasFixedSize(true);
         rvRecomMachinery.setLayoutManager(new GridLayoutManager(instance,
                 2));
-        rvRecomMachinery.setAdapter(itemListDataAdapter);
-
+        rvRecomMachinery.setAdapter(recomMachineryAdapter);
         rvRecomMachinery.setNestedScrollingEnabled(false);
+        recomMachineryAdapter.notifyDataSetChanged();
+    }
+
+    public void onClickEverything(View view) {
+        lin_everything.setBackground(getResources().getDrawable(R.drawable.rounded_light_gray));
+        lin_equipment.setBackground(getResources().getDrawable(R.drawable.rounded_light_blue_ring));
+        lin_spares.setBackground(getResources().getDrawable(R.drawable.rounded_light_blue_ring));
+        Intent intent = new Intent(instance, MachineryActivity.class);
+        intent.putExtra("type", "0");
+        startActivity(intent);
+    }
+
+    public void onClickEquipment(View view) {
+        lin_everything.setBackground(getResources().getDrawable(R.drawable.rounded_light_blue_ring));
+        lin_equipment.setBackground(getResources().getDrawable(R.drawable.rounded_light_gray));
+        lin_spares.setBackground(getResources().getDrawable(R.drawable.rounded_light_blue_ring));
+        Intent intent = new Intent(instance, MachineryActivity.class);
+        intent.putExtra("type", "1");
+        startActivity(intent);
+      //  getItemList("1");
+    }
+
+    public void onClickSpares(View view) {
+        lin_everything.setBackground(getResources().getDrawable(R.drawable.rounded_light_blue_ring));
+        lin_equipment.setBackground(getResources().getDrawable(R.drawable.rounded_light_blue_ring));
+        lin_spares.setBackground(getResources().getDrawable(R.drawable.rounded_light_gray));
+        Intent intent = new Intent(instance, MachineryActivity.class);
+        intent.putExtra("type", "2");
+        startActivity(intent);
+        //  getItemList("2");
     }
 }

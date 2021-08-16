@@ -20,10 +20,9 @@
             android:layout_width="@dimen/_42sdp"
             android:layout_height="@dimen/_42sdp"
             android:layout_centerVertical="true"
-            android:background="?selectableItemBackgroundBorderless"
-            android:padding="@dimen/_10sdp"
+           android:padding="@dimen/_10sdp"
             app:srcCompat="@drawable/icon_back"
-            tools:ignore="VectorDrawableCompat" />
+           />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
@@ -63,15 +62,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/pangram_bold"
-                    android:text="Type"
+                    android:text="Select Equipment"
                     android:textColor="#323C4E"
                     android:textSize="14dp" />
 
                 <com.are.ui.NoChangingBackgroundTextInputLayout
-                    android:id="@+id/ip_username"
+                    android:id="@+id/ip_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_5sdp"
+                    android:focusable="false"
                     android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
                     app:boxBackgroundMode="none"
                     app:errorEnabled="false"
@@ -79,13 +79,49 @@
                     app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtUsername"
+                        android:id="@+id/et_type"
                         style="@style/EditTextTheme"
                         android:background="@drawable/rounded_black_ring"
                         android:drawableRight="@drawable/icon_dropdown"
                         android:drawablePadding="@dimen/_10sdp"
+                        android:focusable="false"
                         android:hint="Put a title to showcase ad" />
                 </com.are.ui.NoChangingBackgroundTextInputLayout>
+
+                <LinearLayout
+                    android:id="@+id/linName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/pangram_bold"
+                        android:text="Name"
+                        android:textColor="#323C4E"
+                        android:textSize="14dp" />
+
+                    <com.are.ui.NoChangingBackgroundTextInputLayout
+                        android:id="@+id/ip_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+                        app:boxBackgroundMode="none"
+                        app:errorEnabled="false"
+                        app:hintAnimationEnabled="false"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_name"
+                            style="@style/EditTextTheme"
+                            android:background="@drawable/rounded_black_ring"
+                            android:hint="Enter Name" />
+                    </com.are.ui.NoChangingBackgroundTextInputLayout>
+                </LinearLayout>
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="match_parent"
@@ -97,6 +133,7 @@
                     android:textSize="14dp" />
 
                 <com.are.ui.NoChangingBackgroundTextInputLayout
+                    android:id="@+id/ip_brand_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_5sdp"
@@ -107,6 +144,7 @@
                     app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_brand_name"
                         style="@style/EditTextTheme"
                         android:background="@drawable/rounded_black_ring"
                         android:hint="Enter Brand name" />
@@ -123,6 +161,7 @@
                     android:textSize="14dp" />
 
                 <com.are.ui.NoChangingBackgroundTextInputLayout
+                    android:id="@+id/ip_model"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_5sdp"
@@ -133,6 +172,7 @@
                     app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_model"
                         style="@style/EditTextTheme"
                         android:background="@drawable/rounded_black_ring"
                         android:hint="Enter Model Name/Number" />
@@ -162,6 +202,7 @@
                             android:textSize="14dp" />
 
                         <com.are.ui.NoChangingBackgroundTextInputLayout
+                            android:id="@+id/ip_year"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_5sdp"
@@ -172,9 +213,12 @@
                             app:hintEnabled="false">
 
                             <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_year"
                                 style="@style/EditTextTheme"
                                 android:background="@drawable/rounded_black_ring"
-                                android:hint="Year" />
+                                android:hint="Year"
+                                android:inputType="number"
+                                android:maxLength="4" />
                         </com.are.ui.NoChangingBackgroundTextInputLayout>
 
                     </LinearLayout>
@@ -195,22 +239,30 @@
                             android:textColor="#323C4E"
                             android:textSize="14dp" />
 
-                        <com.are.ui.NoChangingBackgroundTextInputLayout
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_5sdp"
-                            android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
-                            app:boxBackgroundMode="none"
-                            app:errorEnabled="false"
-                            app:hintAnimationEnabled="false"
-                            app:hintEnabled="false">
+                            android:background="@drawable/rounded_black_ring">
+
 
                             <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_functional"
                                 style="@style/EditTextTheme"
-                                android:background="@drawable/rounded_black_ring"
-                                android:hint="Enter Hr/Km" />
-                        </com.are.ui.NoChangingBackgroundTextInputLayout>
+                                android:layout_toLeftOf="@+id/spinner_functional"
+                                android:background="@null"
+                                android:hint="Enter"
+                                android:inputType="number"
+                                android:maxLength="2" />
 
+                            <Spinner
+                                android:id="@+id/spinner_functional"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:entries="@array/functional" />
+                        </RelativeLayout>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -238,6 +290,7 @@
                             android:textSize="14dp" />
 
                         <com.are.ui.NoChangingBackgroundTextInputLayout
+                            android:id="@+id/ip_quantity"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_5sdp"
@@ -248,9 +301,11 @@
                             app:hintEnabled="false">
 
                             <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_quantity"
                                 style="@style/EditTextTheme"
                                 android:background="@drawable/rounded_black_ring"
-                                android:hint="Enter Qty" />
+                                android:hint="Enter Qty"
+                                android:inputType="number" />
                         </com.are.ui.NoChangingBackgroundTextInputLayout>
 
                     </LinearLayout>
@@ -272,6 +327,7 @@
                             android:textSize="14dp" />
 
                         <com.are.ui.NoChangingBackgroundTextInputLayout
+                            android:id="@+id/ip_unit_price"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_5sdp"
@@ -282,14 +338,43 @@
                             app:hintEnabled="false">
 
                             <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_unit_price"
                                 style="@style/EditTextTheme"
                                 android:background="@drawable/rounded_black_ring"
-                                android:hint="Enter Price" />
+                                android:hint="Enter Price"
+                                android:inputType="numberDecimal" />
                         </com.are.ui.NoChangingBackgroundTextInputLayout>
 
                     </LinearLayout>
 
                 </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/pangram_bold"
+                    android:text="Location"
+                    android:textColor="#323C4E"
+                    android:textSize="14dp" />
+
+                <com.are.ui.NoChangingBackgroundTextInputLayout
+                    android:id="@+id/ip_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+                    app:boxBackgroundMode="none"
+                    app:errorEnabled="false"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_location"
+                        style="@style/EditTextTheme"
+                        android:background="@drawable/rounded_black_ring"
+                        android:hint="Enter Location" />
+                </com.are.ui.NoChangingBackgroundTextInputLayout>
 
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -302,6 +387,7 @@
                     android:textSize="14dp" />
 
                 <com.are.ui.NoChangingBackgroundTextInputLayout
+                    android:id="@+id/ip_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_5sdp"
@@ -312,11 +398,13 @@
                     app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_description"
                         style="@style/EditTextTheme"
                         android:layout_height="@dimen/_60sdp"
                         android:background="@drawable/rounded_black_ring"
                         android:gravity="start"
                         android:hint="Enter Description"
+                        android:maxLines="3"
                         android:paddingTop="@dimen/_10sdp" />
                 </com.are.ui.NoChangingBackgroundTextInputLayout>
 
@@ -336,7 +424,8 @@
                     android:orientation="horizontal"
                     android:weightSum="4">
 
-                    <LinearLayout
+                    <RelativeLayout
+                        android:id="@+id/rel_image1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
@@ -349,12 +438,24 @@
                         <androidx.appcompat.widget.AppCompatImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
                             android:src="@drawable/icon_upload" />
 
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_one"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="0dp"
+                            android:layout_marginBottom="0dp"
+                            app:shapeAppearanceOverlay="@style/circleImageView" />
 
-                    </LinearLayout>
 
-                    <LinearLayout
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rel_image2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
@@ -367,12 +468,19 @@
                         <androidx.appcompat.widget.AppCompatImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
                             android:src="@drawable/icon_upload" />
 
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_two"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:shapeAppearanceOverlay="@style/circleImageView" />
 
-                    </LinearLayout>
+                    </RelativeLayout>
 
-                    <LinearLayout
+                    <RelativeLayout
+                        android:id="@+id/rel_image3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
@@ -385,12 +493,20 @@
                         <androidx.appcompat.widget.AppCompatImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
                             android:src="@drawable/icon_upload" />
 
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_three"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:shapeAppearanceOverlay="@style/circleImageView" />
 
-                    </LinearLayout>
 
-                    <LinearLayout
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rel_image4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
@@ -403,10 +519,17 @@
                         <androidx.appcompat.widget.AppCompatImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
                             android:src="@drawable/icon_upload" />
 
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_four"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:shapeAppearanceOverlay="@style/circleImageView" />
 
-                    </LinearLayout>
+
+                    </RelativeLayout>
 
 
                 </LinearLayout>
@@ -418,7 +541,8 @@
                     android:orientation="horizontal"
                     android:weightSum="4">
 
-                    <LinearLayout
+                    <RelativeLayout
+                        android:id="@+id/rel_image5"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
@@ -431,12 +555,20 @@
                         <androidx.appcompat.widget.AppCompatImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
                             android:src="@drawable/icon_upload" />
 
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_five"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:shapeAppearanceOverlay="@style/circleImageView" />
 
-                    </LinearLayout>
 
-                    <LinearLayout
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rel_image6"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
@@ -449,12 +581,20 @@
                         <androidx.appcompat.widget.AppCompatImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
                             android:src="@drawable/icon_upload" />
 
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_six"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:shapeAppearanceOverlay="@style/circleImageView" />
 
-                    </LinearLayout>
 
-                    <LinearLayout
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rel_image7"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
@@ -467,12 +607,20 @@
                         <androidx.appcompat.widget.AppCompatImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
                             android:src="@drawable/icon_upload" />
 
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_seven"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:shapeAppearanceOverlay="@style/circleImageView" />
 
-                    </LinearLayout>
 
-                    <LinearLayout
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rel_image8"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
@@ -485,10 +633,17 @@
                         <androidx.appcompat.widget.AppCompatImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
                             android:src="@drawable/icon_upload" />
 
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_eight"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:shapeAppearanceOverlay="@style/circleImageView" />
 
-                    </LinearLayout>
+
+                    </RelativeLayout>
 
 
                 </LinearLayout>
@@ -504,12 +659,13 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_55sdp"
+                    android:layout_height="@dimen/_60sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:orientation="horizontal"
                     android:weightSum="4">
 
-                    <LinearLayout
+                    <RelativeLayout
+                        android:id="@+id/rel_video"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
@@ -520,12 +676,26 @@
                         android:orientation="vertical">
 
                         <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/img_video"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
                             android:src="@drawable/icon_upload" />
 
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvVideoUpload"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/img_video"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/poppins"
+                            android:text="Video Uploaded "
+                            android:visibility="gone"
+                            android:textColor="#49BD5C"
+                            android:textSize="14dp" />
 
-                    </LinearLayout>
+                    </RelativeLayout>
 
 
                 </LinearLayout>
@@ -535,6 +705,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_35sdp"
                     android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_50sdp"
                     android:background="@drawable/btn_rounded_gray"
                     android:fontFamily="@font/pangram_bold"
                     android:gravity="center"

@@ -124,7 +124,7 @@ public class OTPActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        tvResend = findViewById(R.id.tvResend);
+       tvResend = findViewById(R.id.tvResend);
         tvTimer = findViewById(R.id.tvTimer);
         tv_mobile = findViewById(R.id.tv_mobile);
         otpView = findViewById(R.id.otp_view);
@@ -154,4 +154,6 @@ public class OTPActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }

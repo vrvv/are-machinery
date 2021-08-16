@@ -14,7 +14,7 @@
         android:background="#F7F7F8">
 
         <ImageView
-            android:id="@+id/img_location"
+            android:id="@+id/img_back"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_48sdp"
             android:padding="@dimen/_14sdp"
@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/img_location"
+            android:layout_toRightOf="@+id/img_back"
             android:fontFamily="@font/poppins_semibold"
             android:text="Employees"
             android:textColor="@color/black"
@@ -49,7 +49,7 @@
             android:orientation="vertical">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvRecomMachinery"
+                android:id="@+id/rvEmployee"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scrollbars="none"
@@ -61,7 +61,7 @@
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_next"
+            android:id="@+id/btn_add"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
             android:layout_alignParentBottom="true"

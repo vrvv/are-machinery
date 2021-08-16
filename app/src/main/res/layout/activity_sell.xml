@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".activities.OTPActivity">
+    tools:context=".activities.SellActivity">
 
     <RelativeLayout
         android:id="@+id/toolbar"
@@ -49,8 +49,10 @@
 
 
         <RelativeLayout
+            android:id="@+id/rel_equipment"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_50sdp"
+            android:onClick="onClickEquipment"
             android:background="@drawable/rounded_gray_bg"
             android:orientation="horizontal">
 
@@ -75,9 +77,11 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/rel_sparepart"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_50sdp"
             android:layout_marginTop="@dimen/_15sdp"
+            android:onClick="onClickSpares"
             android:background="@drawable/rounded_gray_bg"
             android:orientation="horizontal">
 
@@ -106,7 +110,8 @@
             android:layout_height="@dimen/_50sdp"
             android:layout_marginTop="@dimen/_15sdp"
             android:background="@drawable/rounded_gray_bg"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"

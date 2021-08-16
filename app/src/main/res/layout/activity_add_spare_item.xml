@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".activities.OTPActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="@dimen/_42sdp"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_centerVertical="true"
+            android:background="?selectableItemBackgroundBorderless"
+            android:padding="@dimen/_10sdp"
+            app:srcCompat="@drawable/icon_back"
+            tools:ignore="VectorDrawableCompat" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_toRightOf="@+id/img_back"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:text="Enter more details"
+            android:textColor="#323C4E"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/linName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/pangram_bold"
+                        android:text="Name"
+                        android:textColor="#323C4E"
+                        android:textSize="14dp" />
+
+                    <com.are.ui.NoChangingBackgroundTextInputLayout
+                        android:id="@+id/ip_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+                        app:boxBackgroundMode="none"
+                        app:errorEnabled="false"
+                        app:hintAnimationEnabled="false"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_name"
+                            style="@style/EditTextTheme"
+                            android:background="@drawable/rounded_black_ring"
+                            android:hint="Enter Name" />
+                    </com.are.ui.NoChangingBackgroundTextInputLayout>
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/pangram_bold"
+                    android:text="Brand"
+                    android:textColor="#323C4E"
+                    android:textSize="14dp" />
+
+                <com.are.ui.NoChangingBackgroundTextInputLayout
+                    android:id="@+id/ip_brand_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+                    app:boxBackgroundMode="none"
+                    app:errorEnabled="false"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_brand_name"
+                        style="@style/EditTextTheme"
+                        android:background="@drawable/rounded_black_ring"
+                        android:hint="Enter Brand name" />
+                </com.are.ui.NoChangingBackgroundTextInputLayout>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/pangram_bold"
+                    android:text="Model"
+                    android:textColor="#323C4E"
+                    android:textSize="14dp" />
+
+                <com.are.ui.NoChangingBackgroundTextInputLayout
+                    android:id="@+id/ip_model"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+                    app:boxBackgroundMode="none"
+                    app:errorEnabled="false"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_model"
+                        style="@style/EditTextTheme"
+                        android:background="@drawable/rounded_black_ring"
+                        android:hint="Enter Model Name/Number" />
+                </com.are.ui.NoChangingBackgroundTextInputLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/pangram_bold"
+                            android:text="Quantity"
+                            android:textColor="#323C4E"
+                            android:textSize="14dp" />
+
+                        <com.are.ui.NoChangingBackgroundTextInputLayout
+                            android:id="@+id/ip_quantity"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+                            app:boxBackgroundMode="none"
+                            app:errorEnabled="false"
+                            app:hintAnimationEnabled="false"
+                            app:hintEnabled="false">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_quantity"
+                                style="@style/EditTextTheme"
+                                android:background="@drawable/rounded_black_ring"
+                                android:hint="Enter Qty"
+                                android:inputType="number" />
+                        </com.are.ui.NoChangingBackgroundTextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/pangram_bold"
+                            android:text="Unit Price"
+                            android:textColor="#323C4E"
+                            android:textSize="14dp" />
+
+                        <com.are.ui.NoChangingBackgroundTextInputLayout
+                            android:id="@+id/ip_unit_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+                            app:boxBackgroundMode="none"
+                            app:errorEnabled="false"
+                            app:hintAnimationEnabled="false"
+                            app:hintEnabled="false">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_unit_price"
+                                style="@style/EditTextTheme"
+                                android:background="@drawable/rounded_black_ring"
+                                android:hint="Enter Price"
+                                android:inputType="numberDecimal" />
+                        </com.are.ui.NoChangingBackgroundTextInputLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/pangram_bold"
+                    android:text="Part Number"
+                    android:textColor="#323C4E"
+                    android:textSize="14dp" />
+
+                <com.are.ui.NoChangingBackgroundTextInputLayout
+                    android:id="@+id/ip_part_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+                    app:boxBackgroundMode="none"
+                    app:errorEnabled="false"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_part_number"
+                        style="@style/EditTextTheme"
+                        android:background="@drawable/rounded_black_ring"
+                        android:hint="Enter Part Number"
+                        android:inputType="number" />
+                </com.are.ui.NoChangingBackgroundTextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/pangram_bold"
+                    android:text="Location"
+                    android:textColor="#323C4E"
+                    android:textSize="14dp" />
+
+                <com.are.ui.NoChangingBackgroundTextInputLayout
+                    android:id="@+id/ip_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+                    app:boxBackgroundMode="none"
+                    app:errorEnabled="false"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_location"
+                        style="@style/EditTextTheme"
+                        android:background="@drawable/rounded_black_ring"
+                        android:hint="Enter Location" />
+                </com.are.ui.NoChangingBackgroundTextInputLayout>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/pangram_bold"
+                    android:text="Description"
+                    android:textColor="#323C4E"
+                    android:textSize="14dp" />
+
+                <com.are.ui.NoChangingBackgroundTextInputLayout
+                    android:id="@+id/ip_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+                    app:boxBackgroundMode="none"
+                    app:errorEnabled="false"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_description"
+                        style="@style/EditTextTheme"
+                        android:layout_height="@dimen/_60sdp"
+                        android:background="@drawable/rounded_black_ring"
+                        android:gravity="start"
+                        android:hint="Enter Description"
+                        android:maxLines="3"
+                        android:paddingTop="@dimen/_10sdp" />
+                </com.are.ui.NoChangingBackgroundTextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/pangram_bold"
+                    android:text="Add Images (Up to 7)"
+                    android:textColor="#323C4E"
+                    android:textSize="14dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <RelativeLayout
+                        android:id="@+id/rel_image1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_gray_squre"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/icon_upload" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_one"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="0dp"
+                            android:layout_marginBottom="0dp"
+                            app:shapeAppearanceOverlay="@style/circleImageView" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rel_image2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_gray_squre"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/icon_upload" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_two"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:shapeAppearanceOverlay="@style/circleImageView" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rel_image3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_gray_squre"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/icon_upload" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_three"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:shapeAppearanceOverlay="@style/circleImageView" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rel_image4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_gray_squre"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/icon_upload" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_four"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:shapeAppearanceOverlay="@style/circleImageView" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <RelativeLayout
+                        android:id="@+id/rel_image5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_gray_squre"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/icon_upload" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_five"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:shapeAppearanceOverlay="@style/circleImageView" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rel_image6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_gray_squre"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/icon_upload" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_six"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:shapeAppearanceOverlay="@style/circleImageView" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rel_image7"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_gray_squre"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/icon_upload" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_seven"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:shapeAppearanceOverlay="@style/circleImageView" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rel_image8"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_gray_squre"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/icon_upload" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_eight"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:shapeAppearanceOverlay="@style/circleImageView" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/pangram_bold"
+                    android:text="Add Video"
+                    android:textColor="#323C4E"
+                    android:textSize="14dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <RelativeLayout
+                        android:id="@+id/rel_video"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_gray_squre"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/img_video"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/icon_upload" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvVideoUpload"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/img_video"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Video Uploaded Successfully"
+                            android:textColor="#49BD5C"
+                            android:textSize="12dp"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_publish"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_50sdp"
+                    android:background="@drawable/btn_rounded_gray"
+                    android:fontFamily="@font/pangram_bold"
+                    android:gravity="center"
+                    android:text="Publish"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

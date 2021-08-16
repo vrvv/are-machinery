@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
     android:orientation="vertical">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgItemImage"
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_90sdp"
             android:layout_margin="@dimen/_10sdp"
             android:scaleType="fitXY"
-            android:src="@drawable/img_machine" />
+            android:src="@drawable/img_machine"
+            app:shapeAppearanceOverlay="@style/circleImageView" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,14 +29,17 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="Dozer Hitachi 2020 model HVMX001 Model"
                 android:textColor="@color/black"
-                android:textSize="11sp" />
+                android:textSize="12sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCompanyName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
@@ -42,10 +49,11 @@
                 android:textSize="10sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUnitPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
-                android:fontFamily="@font/poppins_medium"
+                android:fontFamily="@font/poppins_semibold"
                 android:text="$24,50,500"
                 android:textColor="#FF1704"
                 android:textSize="12sp" />
@@ -58,6 +66,7 @@
                 android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_contact"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_gray_squre_ring"
@@ -68,6 +77,7 @@
                     android:textSize="12sp" />
 
                 <ImageView
+                    android:id="@+id/imgVerified"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"

@@ -4,13 +4,16 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.ImageView;
 
 import com.are.R;
+import com.bumptech.glide.Glide;
 import com.smarteist.autoimageslider.SliderViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
 public class ImageAdapterExample extends
         SliderViewAdapter<ImageAdapterExample.SliderAdapterVH> {
@@ -46,18 +49,26 @@ public class ImageAdapterExample extends
 
     @Override
     public void onBindViewHolder(SliderAdapterVH viewHolder, final int position) {
+        Glide.with(context)
+                .load("http://aremachinery.com/items/images/" + mSliderItems.get(position))
+                .placeholder(R.drawable.img_machine)
+                .transition(withCrossFade())
+                .into(viewHolder.image);
 
     }
 
     @Override
     public int getCount() {
         //slider view count could be dynamic size
-        return 3;
+        return mSliderItems.size();
     }
 
     public class SliderAdapterVH extends SliderViewAdapter.ViewHolder {
+        public ImageView image;
+
         public SliderAdapterVH(View itemView) {
             super(itemView);
+            image = itemView.findViewById(R.id.image);
 
         }
     }

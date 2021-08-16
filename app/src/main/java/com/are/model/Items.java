@@ -7,6 +7,24 @@ public class Items implements Serializable {
     public int equipmentType;
     public String brand = "";
     public String model = "";
+    public String name = "";
+    public String companyName = "";
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
 
     public int getEquipmentId() {
         return equipmentId;

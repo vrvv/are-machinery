@@ -3,15 +3,11 @@ package com.are.activities;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatAutoCompleteTextView;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatTextView;
 
@@ -42,8 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
     public RegisterActivity context;
     public AppCompatButton btn_signup;
     public AppCompatTextView tvSignup;
-    public AppCompatAutoCompleteTextView act_company_name;
-    public TextInputEditText et_name, et_email, et_mobile, et_gst_no;
+    public TextInputEditText et_name, et_email, et_mobile, et_gst_no, act_company_name;
     public NoChangingBackgroundTextInputLayout ip_name, ip_company_name, ip_email, ip_mobile, ip_gst_no;
     List<String> listComanyName = new ArrayList<>();
     List<Company> listComany = new ArrayList<>();
@@ -60,25 +55,6 @@ public class RegisterActivity extends AppCompatActivity {
         context = this;
         initView();
         MyApp.registerRequest = new RegisterRequest();
-        act_company_name.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (act_company_name.getText().toString().length() >= 3) {
-                    String searchVal = act_company_name.getText().toString().substring(0, 3);
-                    runCompanyApi(searchVal);
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
         btn_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,12 +69,7 @@ public class RegisterActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        act_company_name.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                MyApp.registerRequest.setCompanyId(listComany.get(position).getCompanyId());
-            }
-        });
+
         img_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,11 +83,11 @@ public class RegisterActivity extends AppCompatActivity {
             ip_name.setError("please enter name");
             return;
         }
-      /*  if (act_company_name.getText().toString().isEmpty()) {
+        if (act_company_name.getText().toString().isEmpty()) {
             ip_company_name.setError("please type company name");
             ip_name.setError(null);
             return;
-        }*/
+        }
         String emailText = et_email.getText().toString().trim();
         if (emailText.isEmpty()) {
             ip_email.setError("please enter email");
@@ -134,6 +105,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        img_back = findViewById(R.id.img_back);
         et_name = findViewById(R.id.et_name);
         et_email = findViewById(R.id.et_email);
         et_mobile = findViewById(R.id.et_mobile);
@@ -171,8 +143,8 @@ public class RegisterActivity extends AppCompatActivity {
                         listComanyName.add(response.data.get(i).getName());
                     }
                     ArrayAdapter adapter = new ArrayAdapter(context, R.layout.custom_spinner_text, R.id.tvSpinner, listComanyName);
-                    act_company_name.setAdapter(adapter);
-                    act_company_name.setThreshold(3);
+                    //    act_company_name.setAdapter(adapter);
+                    //   act_company_name.setThreshold(3);
                 } else {
                     ToastUtils.show(context, response.message);
                 }
@@ -278,8 +250,8 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call<ResponseModel<String>> call, Response<ResponseModel<String>> restResponse, ResponseModel<String> response) {
+                loder.dismiss();
                 if (response.isSuccess) {
-                    loder.dismiss();
                     otpText = response.data;
                     startActivity(new Intent(context, OTPActivity.class)
                             .putExtra("mobileNo", phoneText)

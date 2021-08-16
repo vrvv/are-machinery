@@ -74,7 +74,7 @@
                     android:textSize="14dp" />
 
                 <com.are.ui.NoChangingBackgroundTextInputLayout
-                    android:id="@+id/ip_username"
+                    android:id="@+id/ip_legalname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_5sdp"
@@ -101,6 +101,7 @@
                     android:textSize="14dp" />
 
                 <com.are.ui.NoChangingBackgroundTextInputLayout
+                    android:id="@+id/ip_pan_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_5sdp"
@@ -118,6 +119,7 @@
                 </com.are.ui.NoChangingBackgroundTextInputLayout>
 
                 <RelativeLayout
+                    android:id="@+id/rel_pan_upload"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_95sdp"
                     android:layout_marginTop="@dimen/_5sdp"
@@ -125,7 +127,7 @@
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/image_panupload"
+                        android:id="@+id/img_pan_upload"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
@@ -134,7 +136,7 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/image_panupload"
+                        android:layout_below="@+id/img_pan_upload"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:fontFamily="@font/poppins"
@@ -152,6 +154,14 @@
                         android:text="Maximum Size: 1MB"
                         android:textColor="#7C8D94"
                         android:textSize="8dp" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/img_pan"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        app:shapeAppearanceOverlay="@style/circleImageView" />
+
                 </RelativeLayout>
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -164,6 +174,7 @@
                     android:textSize="14dp" />
 
                 <com.are.ui.NoChangingBackgroundTextInputLayout
+                    android:id="@+id/ip_company_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
@@ -189,6 +200,7 @@
                     android:textSize="14dp" />
 
                 <com.are.ui.NoChangingBackgroundTextInputLayout
+                    android:id="@+id/ip_gst_no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_5sdp"
@@ -206,6 +218,7 @@
                 </com.are.ui.NoChangingBackgroundTextInputLayout>
 
                 <RelativeLayout
+                    android:id="@+id/rel_gst"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_95sdp"
                     android:layout_marginTop="@dimen/_5sdp"
@@ -240,6 +253,12 @@
                         android:text="Maximum Size: 1MB"
                         android:textColor="#7C8D94"
                         android:textSize="8dp" />
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/img_gst"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        app:shapeAppearanceOverlay="@style/circleImageView" />
                 </RelativeLayout>
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -251,7 +270,27 @@
                     android:textColor="#323C4E"
                     android:textSize="14dp" />
 
+                <com.are.ui.NoChangingBackgroundTextInputLayout
+                    android:id="@+id/ip_cin_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+                    app:boxBackgroundMode="none"
+                    app:errorEnabled="false"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_cin_no"
+                        style="@style/EditTextThemeEnquiry"
+                        android:background="@drawable/rounded_black_ring"
+                        android:hint="Enter CIN Number"
+                        android:inputType="number" />
+                </com.are.ui.NoChangingBackgroundTextInputLayout>
+
                 <RelativeLayout
+                    android:id="@+id/rel_in"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_95sdp"
                     android:layout_marginTop="@dimen/_5sdp"
@@ -286,6 +325,12 @@
                         android:text="Maximum Size: 1MB"
                         android:textColor="#7C8D94"
                         android:textSize="8dp" />
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/img_cin"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        app:shapeAppearanceOverlay="@style/circleImageView" />
                 </RelativeLayout>
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -302,10 +347,11 @@
                     android:textSize="16dp" />
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvSignup"
+                    android:id="@+id/tvSkip"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_35sdp"
                     android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
                     android:fontFamily="@font/poppins"
                     android:gravity="center"
                     android:text="@string/skip"

@@ -11,11 +11,14 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.are.R;
-import com.are.activities.MachineryActivity;
+import com.are.activities.ProductDetailActivity;
 import com.are.model.Items;
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
 public class RecomMachineryAdapter extends
         RecyclerView.Adapter<RecomMachineryAdapter.HorizontalViewHolder> {
@@ -42,6 +45,8 @@ public class RecomMachineryAdapter extends
     public void onBindViewHolder(HorizontalViewHolder holder, int position) {
         Items items = itemsArrayList.get(position);
         holder.tvUnitPrice.setText(items.getUnitPrice() + "");
+        holder.tvName.setText(items.getName());
+        holder.tvCompanyName.setText(items.getCompanyName());
         if (items.isCompanyVerified()) {
             holder.imgVerified.setVisibility(View.VISIBLE);
         } else {
@@ -51,25 +56,35 @@ public class RecomMachineryAdapter extends
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, MachineryActivity.class);
+                Intent intent = new Intent(mContext, ProductDetailActivity.class);
+                intent.putExtra("itemId", items);
                 mContext.startActivity(intent);
             }
         });
+        Glide.with(mContext)
+                .load("http://aremachinery.com/items/images/" + items.getItemImage())
+                .placeholder(R.drawable.img_machine)
+                .transition(withCrossFade())
+                .into(holder.imgItemImage);
+
     }
 
     @Override
     public int getItemCount() {
-        return 4;
+        return itemsArrayList.size();
     }
 
     class HorizontalViewHolder extends RecyclerView.ViewHolder {
-        public TextView tvUnitPrice;
-        public ImageView imgVerified;
+        public TextView tvUnitPrice, tvName, tvCompanyName;
+        public ImageView imgVerified, imgItemImage;
 
         public HorizontalViewHolder(View itemView) {
             super(itemView);
+            tvName = itemView.findViewById(R.id.tvName);
+            tvCompanyName = itemView.findViewById(R.id.tvCompanyName);
             tvUnitPrice = itemView.findViewById(R.id.tvUnitPrice);
             imgVerified = itemView.findViewById(R.id.imgVerified);
+            imgItemImage = itemView.findViewById(R.id.imgItemImage);
 
         }
     }

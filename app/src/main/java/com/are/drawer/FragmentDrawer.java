@@ -3,7 +3,6 @@ package com.are.drawer;
 import android.app.Fragment;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -19,6 +18,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.are.MyApp;
 import com.are.R;
+import com.are.activities.EmployeesListActivity;
+import com.are.activities.HistoryActivity;
+import com.are.activities.LoginActivity;
+import com.are.activities.MyItemActivity;
 
 /**
  * Created by empiere-vaibhav on 8/9/2018.
@@ -29,7 +32,7 @@ public class FragmentDrawer extends Fragment {
     private ActionBarDrawerToggle mDrawerToggle;
     public DrawerLayout mDrawerLayout;
     public View containerView;
-    public LinearLayout lin_add_vendor, lin_change_pass, lin_contact_us, lin_rate, lin_share, lin_about;
+    public LinearLayout lin_my_enquire, lin_my_items, lin_contact_us, lin_rate, lin_share, lin_employees,lin_logout;
     public TextView txtLogout, nav_username, nav_number;
     public PackageInfo packageInfo;
     public int isActive = 0;
@@ -52,10 +55,47 @@ public class FragmentDrawer extends Fragment {
                              Bundle savedInstanceState) {
         // Inflating view layout
         View layout = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+        lin_logout = layout.findViewById(R.id.lin_logout);
+        lin_employees = layout.findViewById(R.id.lin_employees);
+        lin_my_enquire = layout.findViewById(R.id.lin_my_enquire);
+        lin_my_items = layout.findViewById(R.id.lin_my_items);
+        nav_username = layout.findViewById(R.id.nav_username);
+        nav_username.setText(MyApp.user.getName());
+        lin_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyApp.mySharedPref.setUserId("");
+                MyApp.mySharedPref.setLocationid("");
+                MyApp.mySharedPref.setIsLoggedIn(false);
+                MyApp.mySharedPref.clearApp();
+                startActivity(new Intent(getActivity(), LoginActivity.class));
+                getActivity().finish();
+            }
+        });
 
+        lin_my_enquire.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), HistoryActivity.class));
+
+            }
+        });
+        lin_employees.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), EmployeesListActivity.class));
+
+            }
+        });
+        lin_my_items.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), MyItemActivity.class));
+
+            }
+        });
         return layout;
     }
-
 
 
     public void setUp(int fragmentId, DrawerLayout drawerLayout, ImageView drawerButton) {

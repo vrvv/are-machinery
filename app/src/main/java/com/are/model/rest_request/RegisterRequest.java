@@ -56,6 +56,16 @@ public class RegisterRequest implements Serializable {
     }
 
     public String email = "";
+    public String GSTIN = "";
+
+    public String getGSTIN() {
+        return GSTIN;
+    }
+
+    public void setGSTIN(String GSTIN) {
+        this.GSTIN = GSTIN;
+    }
+
     public String mobile = "";
     public String password = "";
 }

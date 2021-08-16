@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import com.are.R;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 public class UnderReviewActivity extends AppCompatActivity {
     public UnderReviewActivity instance;

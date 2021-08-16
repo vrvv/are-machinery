@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".activities.DashboardActivity">
 
     <androidx.drawerlayout.widget.DrawerLayout
@@ -12,6 +12,7 @@
         android:layout_height="match_parent"
         android:background="@color/white"
         tools:context=".Activity.DashboardActivity">
+
         <fragment
             android:id="@+id/fragment_navigation_drawer"
             class="com.are.drawer.FragmentDrawer"
@@ -136,12 +137,14 @@
                         android:weightSum="3">
 
                         <LinearLayout
+                            android:id="@+id/lin_everything"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="@dimen/_10sdp"
                             android:layout_weight="1"
                             android:background="@drawable/rounded_light_blue_ring"
                             android:elevation="@dimen/_1sdp"
+                            android:onClick="onClickEverything"
                             android:gravity="center"
                             android:orientation="vertical">
 
@@ -161,14 +164,15 @@
 
                         </LinearLayout>
 
-
                         <LinearLayout
+                            android:id="@+id/lin_equipment"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="@dimen/_10sdp"
                             android:layout_weight="1"
-                            android:background="@drawable/rounded_light_blue_ring"
+                            android:background="@drawable/rounded_light_gray"
                             android:elevation="@dimen/_1sdp"
+                            android:onClick="onClickEquipment"
                             android:gravity="center"
                             android:orientation="vertical">
 
@@ -189,11 +193,13 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/lin_spares"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="@dimen/_10sdp"
                             android:layout_weight="1"
                             android:background="@drawable/rounded_light_blue_ring"
+                            android:onClick="onClickSpares"
                             android:elevation="@dimen/_1sdp"
                             android:gravity="center"
                             android:orientation="vertical">
@@ -368,12 +374,13 @@ supplier"
                                 android:id="@+id/rvRecomMachinery"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_15sdp"
                                 android:scrollbars="none"
                                 tools:ignore="MissingConstraints" />
 
                             <View
                                 android:layout_width="@dimen/_5sdp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_centerHorizontal="true"
                                 android:background="#F7F7F8" />
 

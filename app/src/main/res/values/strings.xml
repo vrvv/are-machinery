@@ -9,5 +9,11 @@
     <string name="verified_user"><u>Verified User</u></string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
+    <string name="contact">Please <u><font color='#1A1A1A'>Contact Us</font></u> for any support</string>
+    <string name="contact_detail">You can get <font color='#1A1A1A'>contact details</font> below and connect directly with the seller</string>
+    <string-array name="functional">
 
+        <item>KM</item>
+        <item>HR</item>
+    </string-array>
 </resources>

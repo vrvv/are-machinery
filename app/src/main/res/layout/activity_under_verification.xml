@@ -43,6 +43,7 @@
             android:textSize="18dp" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvContactUs"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_35sdp"
             android:layout_marginStart="@dimen/_30sdp"
@@ -61,7 +62,7 @@
             android:textSize="14dp" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_done"
+            android:id="@+id/btn_close"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_35sdp"
             android:layout_marginStart="@dimen/_30sdp"
