@@ -3,8 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/drawable/btn_rounded_dark_gray.xml" value="0.2" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/drawable/light_blue_gradiant.xml" value="0.2" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_add_emplyoyee.xml" value="0.12" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_dashboard.xml" value="0.12454710144927536" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_my_item_detail.xml" value="0.15307971014492755" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_o_t_p.xml" value="0.18" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_product_detail.xml" value="0.15307971014492755" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_register.xml" value="0.15" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_verify.xml" value="0.1" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/view_images.xml" value="0.11413043478260869" />
       </map>
     </option>
   </component>
