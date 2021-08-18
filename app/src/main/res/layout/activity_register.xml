@@ -89,6 +89,9 @@
                     android:background="@drawable/rounded_white_bg"
                     android:drawableLeft="@drawable/icon_user"
                     android:drawablePadding="@dimen/_10sdp"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
                     android:hint="Enter your Name" />
             </com.are.ui.NoChangingBackgroundTextInputLayout>
 
@@ -118,6 +121,8 @@
                     android:background="@drawable/rounded_white_bg"
                     android:drawableLeft="@drawable/icon_company"
                     android:drawablePadding="@dimen/_10sdp"
+                    android:inputType="text"
+                    android:singleLine="true"
                     android:hint="Enter Company/Business Name" />
             </com.are.ui.NoChangingBackgroundTextInputLayout>
 
@@ -148,6 +153,7 @@
                     android:drawableLeft="@drawable/icon_email"
                     android:drawablePadding="@dimen/_10sdp"
                     android:hint="Enter your Email"
+                    android:singleLine="true"
                     android:inputType="textEmailAddress" />
             </com.are.ui.NoChangingBackgroundTextInputLayout>
 
@@ -178,6 +184,7 @@
                     android:drawableLeft="@drawable/icon_mobile"
                     android:drawablePadding="@dimen/_10sdp"
                     android:hint="Enter your Mobile Number"
+                    android:singleLine="true"
                     android:inputType="number"
                     android:maxLength="10" />
             </com.are.ui.NoChangingBackgroundTextInputLayout>

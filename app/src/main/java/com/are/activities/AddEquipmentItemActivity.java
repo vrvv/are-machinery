@@ -537,7 +537,7 @@ public class AddEquipmentItemActivity extends AppCompatActivity {
 
     private void hitEquipmentListApi() {
         if (!NetworkUtil.getInstance(instance).isConnected()) {
-            ToastUtils.show(instance, "No internet");
+            ToastUtils.show(instance, "No Internet");
             return;
         }
         Call<ResponseModel<List<Equipments>>> callCities = RestServiceFactory.createServiceUser().getEquipmentList();

@@ -119,7 +119,9 @@
                             android:id="@+id/et_name"
                             style="@style/EditTextTheme"
                             android:background="@drawable/rounded_black_ring"
-                            android:hint="Enter Name" />
+                            android:hint="Enter Name"
+                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                            android:singleLine="true"/>
                     </com.are.ui.NoChangingBackgroundTextInputLayout>
                 </LinearLayout>
 
@@ -147,7 +149,8 @@
                         android:id="@+id/et_brand_name"
                         style="@style/EditTextTheme"
                         android:background="@drawable/rounded_black_ring"
-                        android:hint="Enter Brand name" />
+                        android:hint="Enter Brand name"
+                        android:singleLine="true"/>
                 </com.are.ui.NoChangingBackgroundTextInputLayout>
 
 
@@ -175,7 +178,8 @@
                         android:id="@+id/et_model"
                         style="@style/EditTextTheme"
                         android:background="@drawable/rounded_black_ring"
-                        android:hint="Enter Model Name/Number" />
+                        android:hint="Enter Model Name/Number"
+                        android:singleLine="true"/>
                 </com.are.ui.NoChangingBackgroundTextInputLayout>
 
 
@@ -373,7 +377,9 @@
                         android:id="@+id/et_location"
                         style="@style/EditTextTheme"
                         android:background="@drawable/rounded_black_ring"
-                        android:hint="Enter Location" />
+                        android:hint="Enter Location"
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                        android:singleLine="true" />
                 </com.are.ui.NoChangingBackgroundTextInputLayout>
 
 

@@ -134,20 +134,6 @@
         </RelativeLayout>
 
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_next"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_30sdp"
-            android:layout_marginTop="@dimen/_30sdp"
-            android:background="@drawable/btn_rounded_gray"
-            android:fontFamily="@font/pangram_bold"
-            android:gravity="center"
-            android:text="Next"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="16dp" />
-
-
     </LinearLayout>
 
 </LinearLayout>
