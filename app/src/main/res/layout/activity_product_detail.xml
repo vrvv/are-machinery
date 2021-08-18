@@ -291,7 +291,7 @@
                             android:layout_marginRight="@dimen/_10sdp"
                             android:layout_weight="0.5"
                             android:fontFamily="@font/poppins"
-                            android:text="Mialage"
+                            android:text="Mileage"
                             android:textColor="#637699"
                             android:textSize="12sp" />
 

@@ -90,6 +90,7 @@
                             android:id="@+id/et_name"
                             style="@style/EditTextTheme"
                             android:background="@drawable/rounded_black_ring"
+                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
                             android:hint="Enter Name" />
                     </com.are.ui.NoChangingBackgroundTextInputLayout>
                 </LinearLayout>
@@ -284,6 +285,7 @@
                         android:id="@+id/et_location"
                         style="@style/EditTextTheme"
                         android:background="@drawable/rounded_black_ring"
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
                         android:hint="Enter Location" />
                 </com.are.ui.NoChangingBackgroundTextInputLayout>
 

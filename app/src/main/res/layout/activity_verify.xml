@@ -88,6 +88,7 @@
                         android:id="@+id/et_legel_name"
                         style="@style/EditTextThemeEnquiry"
                         android:background="@drawable/rounded_black_ring"
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
                         android:hint="Enter your legel Name" />
                 </com.are.ui.NoChangingBackgroundTextInputLayout>
 

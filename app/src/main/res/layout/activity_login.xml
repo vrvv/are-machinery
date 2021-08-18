@@ -94,13 +94,14 @@
                 app:boxBackgroundMode="none"
                 app:errorEnabled="false"
                 app:hintAnimationEnabled="false"
+                app:passwordToggleEnabled="true"
                 app:hintEnabled="false">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_password"
                     style="@style/EditTextTheme"
                     android:background="@drawable/rounded_white_bg"
-                    android:drawableLeft="@drawable/icon_password"
+                    android:drawableStart="@drawable/icon_password"
                     android:drawablePadding="@dimen/_10sdp"
                     android:hint="Enter password"
                     android:inputType="textPassword" />

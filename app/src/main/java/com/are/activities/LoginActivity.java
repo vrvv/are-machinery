@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -80,14 +81,21 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void validation() {
+        final String regexStr = "^(?:(?:\\+|0{0,2})91(\\s*[\\-]\\s*)?|[0]?)?[789]\\d{9}$";
         String email = et_email.getText().toString();
         String password = et_password.getText().toString();
         if (email.isEmpty()) {
-            ip_email.setError("please enter email/mobile");
+            ip_email.setError("Please Enter Email/Mobile");
             return;
         }
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches() && !email.matches(regexStr)){
+            ip_email.setError("Enter Valid Email or Mobile");
+            return;
+        }
+
         if (password.isEmpty()) {
-            ip_password.setError("please enter password");
+            ip_password.setError("Please Enter Password");
             ip_email.setError(null);
             return;
         }
@@ -98,7 +106,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void hitLoginApi(String email, String password) {
         if (!NetworkUtil.getInstance(context).isConnected()) {
-            ToastUtils.show(context, "No internet");
+            ToastUtils.show(context, "No Internet");
             return;
         }
         loder = DialogUtils.showLoader(this);
@@ -134,7 +142,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void hitUserStatus(MainUser mainUser) {
         if (!NetworkUtil.getInstance(context).isConnected()) {
-            ToastUtils.show(context, "No internet");
+            ToastUtils.show(context, "No Internet");
             return;
         }
         Call<ResponseModel<Boolean>> call = RestServiceFactory.createServiceUser().getUserStatus(mainUser.getUserId());
@@ -166,7 +174,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void hitCompanyStatus(MainUser mainUser) {
         if (!NetworkUtil.getInstance(context).isConnected()) {
-            ToastUtils.show(context, "No internet");
+            ToastUtils.show(context, "No Internet");
             return;
         }
         Call<ResponseModel<String>> call = RestServiceFactory.createServiceUser().getCompanyStatus(mainUser.getCompanyId());
