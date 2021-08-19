@@ -53,7 +53,7 @@ public class ProductDetailActivity extends AppCompatActivity {
     ImageAdapterExample adapter;
     ArrayList<String> dashboardImageArrayList = new ArrayList<>();
     public AppCompatButton btn_enquiry;
-    public Items items ;
+    public Items items;
     public TextView tvname, tvUnitPrice, tvCompanyName, tvLocation, tvModel, tvBrand, tvYear, tvFunction;
     public BottomSheetDialog mBottomSheetEnquire, mBottomSheetEnquireSuccess;
     public AddEnquiryRequest addEnquiryRequest;
@@ -86,19 +86,27 @@ public class ProductDetailActivity extends AppCompatActivity {
         tvBrand = findViewById(R.id.tvBrand);
         tvYear = findViewById(R.id.tvYear);
         tvFunction = findViewById(R.id.tvFunction);
-        getDetailApi();
-        bottomSelectBusinessType();
-        bottomEnquireSuccess();
-        btn_enquiry.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mBottomSheetEnquire.show();
+        if (items.isEnquired()) {
+            btn_enquiry.setClickable(false);
+            btn_enquiry.setText("Already Enquired");
+        } else {
+            btn_enquiry.setClickable(true);
+            btn_enquiry.setText("Enquire Now!");
+            btn_enquiry.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mBottomSheetEnquire.show();
 
           /*      Intent intent = new Intent(instance, HistoryActivity.class);
                 startActivity(intent);
          */
-            }
-        });
+                }
+            });
+        }
+        getDetailApi();
+        bottomSelectBusinessType();
+        bottomEnquireSuccess();
+
     }
 
     private void bottomEnquireSuccess() {
@@ -118,7 +126,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         TextView tvname = view.findViewById(R.id.tvname);
         TextView tvnumber = view.findViewById(R.id.tvnumber);
         TextView tv_call = view.findViewById(R.id.tv_call);
-        tvname.setText(itemDetails.getName());
+        tvname.setText(items.getName());
         tvnumber.setText(itemDetails.getContact());
         tv_call.setOnClickListener(new View.OnClickListener() {
             @Override
