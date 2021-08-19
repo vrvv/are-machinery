@@ -17,7 +17,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ARE"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.AddSpareItemActivity"></activity>
+        <activity
+            android:name=".activities.ForgotVerifyOtpActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.EnterMobileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.ForgotPass1Activity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.ChangePassActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.ForgotPassActivity"
+            android:exported="true" />
+        <activity android:name=".activities.AddSpareItemActivity" />
         <activity android:name=".activities.MyItemDetailActivity" />
         <activity android:name=".activities.MyItemActivity" />
         <activity android:name=".activities.UnderVerificationActivity" />

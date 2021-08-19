@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -81,6 +82,7 @@ public class AddEquipmentItemActivity extends AppCompatActivity {
     public String functional_type = "KM";
     public Dialog loder;
     public ImageView img_back;
+    public VideoView videoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -228,7 +230,7 @@ public class AddEquipmentItemActivity extends AppCompatActivity {
         CropImage.activity(imageUri)
                 .setGuidelines(CropImageView.Guidelines.ON)
                 .setAspectRatio(1, 1)
-                .setShowCropOverlay(false)
+                .setShowCropOverlay(true)
                 .setFixAspectRatio(true)
                 .setMultiTouchEnabled(true)
                 .start(instance);
@@ -257,6 +259,7 @@ public class AddEquipmentItemActivity extends AppCompatActivity {
                 Uri selectedImageUri = data.getData();
                 tvVideoUpload.setVisibility(View.VISIBLE);
                 generateVideoName();
+             //   videoView.setVideoURI(selectedImageUri);
                 goforVideoIt();
             }
             if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
@@ -429,6 +432,9 @@ public class AddEquipmentItemActivity extends AppCompatActivity {
             ip_type.setError(null);
             return;
         }
+
+
+
         goforIt();
         addItemRequest.setEquipmentType(equipmentType);
         addItemRequest.setName(et_name.getText().toString());
@@ -453,6 +459,14 @@ public class AddEquipmentItemActivity extends AppCompatActivity {
             AddItemRequest.Video aI = new AddItemRequest.Video();
             aI.setUrl("/videos/" + seletedVideoFileArray.get(i).getName());
             addItemRequest.video.add(aI);
+        }
+        if(addItemRequest.images.size()==0){
+            ToastUtils.show(instance, "Please select Image");
+            return;
+        }
+        if(addItemRequest.video.size()==0){
+            ToastUtils.show(instance, "Please select Video");
+            return;
         }
         hitEnquiryApi(addItemRequest);
 
@@ -492,6 +506,7 @@ public class AddEquipmentItemActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        videoView = findViewById(R.id.videoView);
         tvVideoUpload = findViewById(R.id.tvVideoUpload);
         spinner_functional = findViewById(R.id.spinner_functional);
         ip_location = findViewById(R.id.ip_location);

@@ -61,17 +61,7 @@ public class FragmentDrawer extends Fragment {
         lin_my_items = layout.findViewById(R.id.lin_my_items);
         nav_username = layout.findViewById(R.id.nav_username);
         nav_username.setText(MyApp.user.getName());
-        lin_logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MyApp.mySharedPref.setUserId("");
-                MyApp.mySharedPref.setLocationid("");
-                MyApp.mySharedPref.setIsLoggedIn(false);
-                MyApp.mySharedPref.clearApp();
-                startActivity(new Intent(getActivity(), LoginActivity.class));
-                getActivity().finish();
-            }
-        });
+
 
         lin_my_enquire.setOnClickListener(new View.OnClickListener() {
             @Override

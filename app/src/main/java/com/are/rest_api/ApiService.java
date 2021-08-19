@@ -45,6 +45,18 @@ public interface ApiService {
     Call<ResponseModel<String>> getOtp(@Path("number") String number);
 
     @Headers("Content-type: application/json")
+    @GET(AppConstants.Url.FORGOT_PASS_EMAIL)
+    Call<ResponseModel<String>> forgotPassEmail(@QueryMap Map<String, String> params);
+
+    @Headers("Content-type: application/json")
+    @GET(AppConstants.Url.FORGOT_PASS_MOBILE)
+    Call<ResponseModel<MainUser>> forgotPassMobile(@Path("mobile") String mobile);
+
+    @Headers("Content-type: application/json")
+    @POST(AppConstants.Url.SET_PASS)
+    Call<ResponseModel<String>> setPass(@Path("userId") String userId,@Path("password") String password);
+
+    @Headers("Content-type: application/json")
     @GET(AppConstants.Url.RESEND_OTP)
     Call<ResponseModel<String>> resendOTP(@Path("number") String number);
 

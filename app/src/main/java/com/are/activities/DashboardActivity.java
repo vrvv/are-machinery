@@ -1,8 +1,14 @@
 package com.are.activities;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -40,7 +46,7 @@ public class DashboardActivity extends AppCompatActivity {
     public List<Items> itemsArrayList = new ArrayList<>();
     private FragmentDrawer drawerFragment;
     public ImageView img_menu;
-    public LinearLayout lin_everything, lin_spares, lin_equipment;
+    public LinearLayout lin_everything, lin_spares, lin_equipment,lin_logout;
     public RecomMachineryAdapter recomMachineryAdapter;
 
     @Override
@@ -54,6 +60,7 @@ public class DashboardActivity extends AppCompatActivity {
         setupDrawer();
         lin_everything = findViewById(R.id.lin_everything);
         lin_spares = findViewById(R.id.lin_spares);
+        lin_logout = findViewById(R.id.lin_logout);
         lin_equipment = findViewById(R.id.lin_equipment);
         tv_sell_here = findViewById(R.id.tv_sell_here);
         btn_post_request = findViewById(R.id.btn_post_request);
@@ -73,11 +80,60 @@ public class DashboardActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        lin_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showLogoutPopUp();
+            }
+        });
 
     }
 
     public void setupDrawer() {
         drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), img_menu);
+    }
+
+    public void showLogoutPopUp() {
+
+        final Dialog dialog = new Dialog(instance);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCancelable(false);
+        dialog.setContentView(R.layout.dailog_logout);
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        TextView btnNo = (TextView) dialog.findViewById(R.id.btnNo);
+        TextView btnYes = (TextView) dialog.findViewById(R.id.btnYes);
+
+        if (dialog.getWindow() != null) {
+            WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+            Window window = dialog.getWindow();
+            lp.copyFrom(window.getAttributes());
+            window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            DisplayMetrics metrics = getResources().getDisplayMetrics();
+            lp.width = (int) (metrics.widthPixels * 0.90);
+            lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+            window.setAttributes(lp);
+        }
+        btnYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyApp.mySharedPref.setUserId("");
+                MyApp.mySharedPref.setLocationid("");
+                MyApp.mySharedPref.setIsLoggedIn(false);
+                MyApp.mySharedPref.clearApp();
+                startActivity(new Intent(instance, LoginActivity.class));
+                finish();
+                dialog.dismiss();
+            }
+        });
+        btnNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+
     }
 
     private void getItemList(String type) {
@@ -140,7 +196,7 @@ public class DashboardActivity extends AppCompatActivity {
         Intent intent = new Intent(instance, MachineryActivity.class);
         intent.putExtra("type", "1");
         startActivity(intent);
-      //  getItemList("1");
+        //  getItemList("1");
     }
 
     public void onClickSpares(View view) {

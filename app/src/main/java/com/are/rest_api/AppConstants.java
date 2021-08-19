@@ -4,13 +4,6 @@ package com.are.rest_api;
  * Created by Karan on 12,August,2019
  */
 public class AppConstants {
-
-    public static class Tab {
-        public static final int MENU_HOME = 0;
-        public static final int MENU_REWARD = 1;
-        public static final int MENU_NOTIFICATION = 2;
-        public static final int MENU_ACCOUNT = 3;
-    }
     public static class General {
         public static final String INDIAN_RUPEES = "\u20B9";
     }
@@ -33,6 +26,9 @@ public class AppConstants {
         public static final String USER_STATUS = "/user/status/{userId}";
         public static final String COMPANY_STATUS = "/company/status/{companyId}";
         public static final String ADD_COMPANY = "/company/docs";
+        public static final String FORGOT_PASS_EMAIL = "user/forgot/password?";
+        public static final String FORGOT_PASS_MOBILE = "user/forgot/password/{mobile}";
+        public static final String SET_PASS = "/user/{userId}/reset/password/{password}";
 
         //Dashboard
         public static final String ADD_ITEM = "/item/add";

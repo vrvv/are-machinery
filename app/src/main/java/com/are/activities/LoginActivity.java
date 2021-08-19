@@ -38,7 +38,7 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
     public LoginActivity context;
     public AppCompatButton btn_login;
-    public AppCompatTextView tvSignup;
+    public AppCompatTextView tvSignup,tv_forgot;
     public TextInputEditText et_email, et_password;
     public NoChangingBackgroundTextInputLayout ip_email, ip_password;
     public Dialog loder;
@@ -58,6 +58,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 validation();
+            }
+        });
+        tv_forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ForgotPass1Activity.class);
+                startActivity(intent);
+
             }
         });
         tvSignup.setOnClickListener(new View.OnClickListener() {
@@ -211,6 +219,7 @@ public class LoginActivity extends AppCompatActivity {
         et_password = findViewById(R.id.et_password);
         btn_login = findViewById(R.id.btn_login);
         tvSignup = findViewById(R.id.tvSignup);
+        tv_forgot = findViewById(R.id.tv_forgot);
         ip_email = findViewById(R.id.ip_email);
         ip_password = findViewById(R.id.ip_password);
     }

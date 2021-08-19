@@ -40,6 +40,15 @@ public class EmployeeAdapter extends
         holder.tvName.setText(myEnquiries.getName());
         holder.tv_mobile.setText(myEnquiries.getMobile());
         holder.tv_email.setText(myEnquiries.getEmail());
+        holder.tvRole.setText(myEnquiries.getRole());
+        if(myEnquiries.isActive()){
+            holder.tv_active.setVisibility(View.VISIBLE);
+            holder.tv_inactive.setVisibility(View.GONE);
+        }else{
+            holder.tv_active.setVisibility(View.GONE);
+            holder.tv_inactive.setVisibility(View.VISIBLE);
+
+        }
 
     }
 
@@ -49,10 +58,13 @@ public class EmployeeAdapter extends
     }
 
     class HorizontalViewHolder extends RecyclerView.ViewHolder {
-        public TextView tvName, tv_mobile, tv_email;
+        public TextView tvName, tv_mobile, tv_email, tvRole,tv_inactive,tv_active;
 
         public HorizontalViewHolder(View itemView) {
             super(itemView);
+            tv_inactive = itemView.findViewById(R.id.tv_inactive);
+            tv_active = itemView.findViewById(R.id.tv_active);
+            tvRole = itemView.findViewById(R.id.tvRole);
             tvName = itemView.findViewById(R.id.tvName);
             tv_mobile = itemView.findViewById(R.id.tv_mobile);
             tv_email = itemView.findViewById(R.id.tv_email);

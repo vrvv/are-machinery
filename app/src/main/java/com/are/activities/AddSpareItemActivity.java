@@ -171,7 +171,7 @@ public class AddSpareItemActivity extends AppCompatActivity {
         CropImage.activity(imageUri)
                 .setGuidelines(CropImageView.Guidelines.ON)
                 .setAspectRatio(1, 1)
-                .setShowCropOverlay(false)
+                .setShowCropOverlay(true)
                 .setFixAspectRatio(true)
                 .setMultiTouchEnabled(true)
                 .start(instance);
@@ -368,7 +368,6 @@ public class AddSpareItemActivity extends AppCompatActivity {
             ip_brand_name.setError(null);
             return;
         }
-
         goforIt();
         addItemRequest.setEquipmentType(0);
         addItemRequest.setName(et_name.getText().toString());
@@ -391,6 +390,14 @@ public class AddSpareItemActivity extends AppCompatActivity {
             AddSpareItemRequest.Video aI = new AddSpareItemRequest.Video();
             aI.setUrl("/videos/" + seletedVideoFileArray.get(i).getName());
             addItemRequest.video.add(aI);
+        }
+        if(addItemRequest.images.size()==0){
+            ToastUtils.show(instance, "Please select Image");
+            return;
+        }
+        if(addItemRequest.video.size()==0){
+            ToastUtils.show(instance, "Please select Video");
+            return;
         }
         hitEnquiryApi(addItemRequest);
 
