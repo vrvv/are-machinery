@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -257,9 +258,11 @@ public class AddEquipmentItemActivity extends AppCompatActivity {
             if (requestCode == SELECT_VIDEO) {
                 System.out.println("SELECT_VIDEO");
                 Uri selectedImageUri = data.getData();
-                tvVideoUpload.setVisibility(View.VISIBLE);
+                //tvVideoUpload.setVisibility(View.VISIBLE);
+                videoView.setVisibility(View.VISIBLE);
                 generateVideoName();
-             //   videoView.setVideoURI(selectedImageUri);
+                videoView.setVideoURI(selectedImageUri);
+                videoView.start();
                 goforVideoIt();
             }
             if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {

@@ -608,6 +608,12 @@
                             android:textSize="12dp"
                             android:visibility="gone" />
 
+                        <VideoView
+                            android:id="@+id/videoView"
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_60sdp"/>
+
                     </RelativeLayout>
 
 

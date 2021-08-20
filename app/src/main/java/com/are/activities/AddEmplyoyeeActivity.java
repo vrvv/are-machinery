@@ -91,48 +91,48 @@ public class AddEmplyoyeeActivity extends AppCompatActivity {
 
     private void validation() {
         if (et_name.getText().toString().isEmpty()) {
-            ip_name.setError("please enter name");
+            ip_name.setError("Please Enter Name");
             return;
         }
 
         String phoneText = et_mobile.getText().toString().trim();
         if (phoneText.length() == 0) {
-            ip_mobile.setError("please enter phone number");
+            ip_mobile.setError("Please Enter Phone Number");
             ip_name.setError(null);
             return;
         }
         if (phoneText.length() != 10) {
-            ip_mobile.setError("phone number is invalid");
+            ip_mobile.setError("Phone Number is Invalid");
             ip_name.setError(null);
             return;
         }
         if (phoneText.length() < 10) {
-            ip_mobile.setError("please enter valid 10 digit mobile number");
+            ip_mobile.setError("Please Enter Valid 10 Digit Mobile Number");
             ip_name.setError(null);
             return;
         }
         String emailText = et_email.getText().toString().trim();
         if (emailText.isEmpty()) {
-            ip_email.setError("please enter email");
+            ip_email.setError("Please Enter Email");
             ip_name.setError(null);
             ip_mobile.setError(null);
             return;
         }
         if (!LogUtils.isValidEmail(emailText)) {
-            ip_email.setError("please enter valid email");
+            ip_email.setError("Please Enter Valid Email");
             ip_mobile.setError(null);
             ip_name.setError(null);
             return;
         }
         if (et_password.getText().toString().isEmpty()) {
-            ip_password.setError("please enter password");
+            ip_password.setError("Please Enter Password");
             ip_mobile.setError(null);
             ip_name.setError(null);
             ip_email.setError(null);
             return;
         }
         if (et_city.getText().toString().isEmpty()) {
-            ip_city.setError("please enter city");
+            ip_city.setError("Please Enter City");
             ip_role.setError(null);
             ip_password.setError(null);
             ip_mobile.setError(null);
@@ -141,7 +141,7 @@ public class AddEmplyoyeeActivity extends AppCompatActivity {
             return;
         }
         if (et_role_no.getText().toString().isEmpty()) {
-            ip_role.setError("please select role");
+            ip_role.setError("Please Select Role");
             ip_password.setError(null);
             ip_mobile.setError(null);
             ip_name.setError(null);
