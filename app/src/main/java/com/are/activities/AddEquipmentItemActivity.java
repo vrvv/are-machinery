@@ -1,5 +1,7 @@
 package com.are.activities;
 
+import static android.os.Environment.DIRECTORY_DCIM;
+
 import android.Manifest;
 import android.app.Dialog;
 import android.content.Intent;
@@ -55,14 +57,12 @@ import java.util.UUID;
 import retrofit2.Call;
 import retrofit2.Response;
 
-import static android.os.Environment.DIRECTORY_DCIM;
-
 public class AddEquipmentItemActivity extends AppCompatActivity {
     public AddEquipmentItemActivity instance;
     public AppCompatButton btn_publish;
     public List<Equipments> equipmentsList = new ArrayList<>();
     public TextInputEditText et_type, et_name, et_brand_name, et_model, et_year, et_functional, et_quantity, et_unit_price, et_location, et_description;
-    public NoChangingBackgroundTextInputLayout ip_type, ip_brand_name, ip_model, ip_year,ip_location, ip_quantity, ip_unit_price,
+    public NoChangingBackgroundTextInputLayout ip_type, ip_brand_name, ip_model, ip_year, ip_location, ip_quantity, ip_unit_price,
             ip_description;
     public AddItemRequest addItemRequest;
     public int equipmentType = 0;
@@ -117,7 +117,8 @@ public class AddEquipmentItemActivity extends AppCompatActivity {
                                 linName.setVisibility(View.GONE);
 
                             }
-                            equipmentType = item.getItemId();
+                            equipmentType = equipmentsList.get(item.getItemId() - 1).getItemType();
+                            Log.i("equipmentType", "==>" + equipmentType);
                             return false;
                         }
                     });
@@ -259,7 +260,7 @@ public class AddEquipmentItemActivity extends AppCompatActivity {
                 Uri selectedImageUri = data.getData();
                 tvVideoUpload.setVisibility(View.VISIBLE);
                 generateVideoName();
-             //   videoView.setVideoURI(selectedImageUri);
+                //   videoView.setVideoURI(selectedImageUri);
                 goforVideoIt();
             }
             if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
@@ -434,7 +435,6 @@ public class AddEquipmentItemActivity extends AppCompatActivity {
         }
 
 
-
         goforIt();
         addItemRequest.setEquipmentType(equipmentType);
         addItemRequest.setName(et_name.getText().toString());
@@ -460,11 +460,11 @@ public class AddEquipmentItemActivity extends AppCompatActivity {
             aI.setUrl("/videos/" + seletedVideoFileArray.get(i).getName());
             addItemRequest.video.add(aI);
         }
-        if(addItemRequest.images.size()==0){
+        if (addItemRequest.images.size() == 0) {
             ToastUtils.show(instance, "Please select Image");
             return;
         }
-        if(addItemRequest.video.size()==0){
+        if (addItemRequest.video.size() == 0) {
             ToastUtils.show(instance, "Please select Video");
             return;
         }

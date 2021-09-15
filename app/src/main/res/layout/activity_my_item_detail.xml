@@ -85,7 +85,7 @@
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:fontFamily="@font/poppins_medium"
-                android:text="05 June 2021"
+                tools:text="05 June 2021"
                 android:textColor="#F66F40"
                 android:textSize="10sp" />
 
@@ -115,7 +115,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_medium"
-                        android:text="Dozer Hitachi 2020 model in the WH HVMX001 Model"
+                        tools:text="Dozer Hitachi 2020 model in the WH HVMX001 Model"
                         android:textColor="#4A4949"
                         android:textSize="12sp" />
 
@@ -125,7 +125,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="INR 3,50,000"
+                        tools:text="INR 3,50,000"
                         android:textColor="@color/black"
                         android:textSize="12sp" />
 
@@ -135,7 +135,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:fontFamily="@font/poppins"
-                        android:text="Sri Mahalakshmi Enterprices"
+                        tools:text="Sri Mahalakshmi Enterprices"
                         android:textColor="#F66F40"
                         android:textSize="10sp" />
 

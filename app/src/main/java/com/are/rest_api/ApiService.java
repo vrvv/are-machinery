@@ -16,6 +16,8 @@ import com.are.model.rest_request.AddEmployeeRequest;
 import com.are.model.rest_request.AddEnquiryRequest;
 import com.are.model.rest_request.AddItemRequest;
 import com.are.model.rest_request.AddSpareItemRequest;
+import com.are.model.rest_request.EditDetailRequest;
+import com.are.model.rest_request.EditEmployeeRequest;
 import com.are.model.rest_request.GetItemRequest;
 import com.are.model.rest_request.RegisterRequest;
 
@@ -136,5 +138,17 @@ public interface ApiService {
     @Headers("Content-type: application/json")
     @POST(AppConstants.Url.ADD_EMPLOYEE)
     Call<ResponseModel<String>> addEmployee(@Body AddEmployeeRequest addEmployeeRequest);
+    @Headers("Content-type: application/json")
+    @POST(AppConstants.Url.EDIT_EMPLOYEE)
+    Call<ResponseModel<String>> editEmployee(@Body EditEmployeeRequest addEmployeeRequest);
+
+    @Headers("Content-type: application/json")
+    @GET(AppConstants.Url.CONTENT)
+    Call<ResponseModel<String>> getContent(@Path("type") int type);
+
+
+    @Headers("Content-type: application/json")
+    @POST(AppConstants.Url.EDIT_DETAIL)
+    Call<ResponseModel<String>> editDetail(@Body EditDetailRequest editDetailRequest);
 
 }

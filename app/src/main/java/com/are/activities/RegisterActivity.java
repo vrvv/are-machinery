@@ -38,8 +38,8 @@ public class RegisterActivity extends AppCompatActivity {
     public RegisterActivity context;
     public AppCompatButton btn_signup;
     public AppCompatTextView tvSignup;
-    public TextInputEditText et_name, et_email, et_mobile, et_gst_no, act_company_name;
-    public NoChangingBackgroundTextInputLayout ip_name, ip_company_name, ip_email, ip_mobile, ip_gst_no;
+    public TextInputEditText et_name, et_email, et_mobile, et_gst_no, act_company_name, et_location;
+    public NoChangingBackgroundTextInputLayout ip_name, ip_company_name, ip_email, ip_mobile, ip_gst_no, ip_location;
     List<String> listComanyName = new ArrayList<>();
     List<Company> listComany = new ArrayList<>();
     public Dialog loder;
@@ -110,6 +110,8 @@ public class RegisterActivity extends AppCompatActivity {
         et_email = findViewById(R.id.et_email);
         et_mobile = findViewById(R.id.et_mobile);
         et_gst_no = findViewById(R.id.et_gst_no);
+        et_location = findViewById(R.id.et_location);
+        ip_location = findViewById(R.id.ip_location);
         ip_name = findViewById(R.id.ip_name);
         ip_company_name = findViewById(R.id.ip_company_name);
         ip_email = findViewById(R.id.ip_email);
@@ -175,11 +177,16 @@ public class RegisterActivity extends AppCompatActivity {
                     ip_email.setError(null);
                     return;
                 }
+                if (et_location.getText().toString().isEmpty()) {
+                    ip_location.setError("please enter location");
+                    return;
+                }
                 MyApp.registerRequest.setName(et_name.getText().toString());
                 MyApp.registerRequest.setCompanyId(0);
                 MyApp.registerRequest.setCompanyName(act_company_name.getText().toString());
                 MyApp.registerRequest.setEmail(et_email.getText().toString());
                 MyApp.registerRequest.setMobile(phoneText);
+                MyApp.registerRequest.setCity(et_location.getText().toString());
                 hitApiForOTP(phoneText);
             }
         });

@@ -46,7 +46,7 @@ public class DashboardActivity extends AppCompatActivity {
     public List<Items> itemsArrayList = new ArrayList<>();
     private FragmentDrawer drawerFragment;
     public ImageView img_menu;
-    public LinearLayout lin_everything, lin_spares, lin_equipment,lin_logout;
+    public LinearLayout lin_everything, lin_spares, lin_equipment,lin_logout,lin_privacy,lin_edit_detail,lin_terms,lin_contact;
     public RecomMachineryAdapter recomMachineryAdapter;
 
     @Override
@@ -58,6 +58,10 @@ public class DashboardActivity extends AppCompatActivity {
         drawerFragment = (FragmentDrawer) getFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
         img_menu = findViewById(R.id.img_menu);
         setupDrawer();
+        lin_contact = findViewById(R.id.lin_contact);
+        lin_terms = findViewById(R.id.lin_terms);
+        lin_edit_detail = findViewById(R.id.lin_edit_detail);
+        lin_privacy = findViewById(R.id.lin_privacy);
         lin_everything = findViewById(R.id.lin_everything);
         lin_spares = findViewById(R.id.lin_spares);
         lin_logout = findViewById(R.id.lin_logout);
@@ -78,6 +82,40 @@ public class DashboardActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(instance, EnquireActivity.class);
                 startActivity(intent);
+            }
+        });
+        lin_privacy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(instance, ContantActivity.class);
+                intent.putExtra("type","516");
+                startActivity(intent);
+
+            }
+        });
+        lin_terms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(instance, ContantActivity.class);
+                intent.putExtra("type","517");
+                startActivity(intent);
+
+            }
+        });
+        lin_edit_detail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(instance, EditDetailActivity.class);
+                startActivity(intent);
+
+            }
+        });
+        lin_contact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(instance, ContactActivity.class);
+                startActivity(intent);
+
             }
         });
         lin_logout.setOnClickListener(new View.OnClickListener() {

@@ -18,6 +18,18 @@
         android:theme="@style/Theme.ARE"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activities.ContactActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.EditEmplyoeeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.EditDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.ContantActivity"
+            android:exported="true" />
+        <activity
             android:name=".activities.ForgotVerifyOtpActivity"
             android:exported="true" />
         <activity

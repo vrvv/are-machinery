@@ -1,6 +1,7 @@
 package com.are.activities;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -24,6 +25,7 @@ import com.are.rest_api.RestCallBack;
 import com.are.rest_api.RestServiceFactory;
 import com.are.utils.LogUtils;
 import com.are.utils.ToastUtils;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,6 +75,9 @@ public class MachineryActivity extends AppCompatActivity {
         getItemRequest.setLocation("Hyderabad");
         getItemRequest.setUserid(Integer.parseInt(MyApp.mySharedPref.getUserId()));
         Call<ResponseModel<List<Items>>> callStates = RestServiceFactory.createServiceUser().getItem(getItemRequest);
+        Gson gson = new Gson();
+        String json = gson.toJson(getItemRequest);
+        Log.d("myTag", json);
 
         callStates.enqueue(new RestCallBack<ResponseModel<List<Items>>>(instance) {
             @Override

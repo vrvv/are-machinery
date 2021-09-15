@@ -19,6 +19,7 @@ import com.are.MyApp;
 import com.are.R;
 import com.are.model.Employees;
 import com.are.model.rest_request.AddEmployeeRequest;
+import com.are.model.rest_request.EditEmployeeRequest;
 import com.are.rest_api.ResponseModel;
 import com.are.rest_api.RestCallBack;
 import com.are.rest_api.RestServiceFactory;
@@ -33,15 +34,15 @@ import com.google.gson.Gson;
 import retrofit2.Call;
 import retrofit2.Response;
 
-public class AddEmplyoyeeActivity extends AppCompatActivity {
-    public AddEmplyoyeeActivity instance;
+public class EditEmplyoeeActivity extends AppCompatActivity {
+    public EditEmplyoeeActivity instance;
     public AppCompatButton btn_save;
-    public TextInputEditText et_name, et_mobile, et_email, et_city, et_password, et_role_no;
-    public NoChangingBackgroundTextInputLayout ip_name, ip_mobile, ip_email, ip_password, ip_role, ip_city;
+    public TextInputEditText et_name, et_mobile, et_email, et_role_no;
+    public NoChangingBackgroundTextInputLayout ip_name, ip_mobile, ip_email, ip_role;
     public AppCompatCheckBox chk_active;
     public String[] roleArray = new String[]{"Manager", "Employee"};
     public int role_id = 0;
-    public AddEmployeeRequest addEmployeeRequest;
+    public EditEmployeeRequest editEmployeeRequest;
     public Dialog loder;
     public ImageView img_back;
     public boolean isEdit = false;
@@ -50,22 +51,19 @@ public class AddEmplyoyeeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_emplyoyee);
+        setContentView(R.layout.activity_edit_emplyoee);
         instance = this;
-        isEdit = getIntent().getBooleanExtra("isEdit", false);
 
 
-        addEmployeeRequest = new AddEmployeeRequest();
         initView();
-        if (isEdit) {
-            employees = (Employees) getIntent().getSerializableExtra("employees");
-            et_name.setText(employees.getName());
-            et_mobile.setText(employees.getMobile());
-            et_email.setText(employees.getEmail());
-            et_password.setText(employees.getPassword());
-            et_role_no.setText(employees.getRole());
+        editEmployeeRequest = new EditEmployeeRequest();
+        employees = (Employees) getIntent().getSerializableExtra("employees");
+        et_name.setText(employees.getName());
+        et_mobile.setText(employees.getMobile());
+        et_email.setText(employees.getEmail());
+        et_role_no.setText(employees.getRole());
 
-        }
+
         img_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,9 +74,9 @@ public class AddEmplyoyeeActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    addEmployeeRequest.setActive(isChecked);
+                    editEmployeeRequest.setActive(isChecked);
                 } else {
-                    addEmployeeRequest.setActive(isChecked);
+                    editEmployeeRequest.setActive(isChecked);
 
                 }
             }
@@ -153,41 +151,24 @@ public class AddEmplyoyeeActivity extends AppCompatActivity {
             ip_name.setError(null);
             return;
         }
-        if (et_password.getText().toString().isEmpty()) {
-            ip_password.setError("please enter password");
-            ip_mobile.setError(null);
-            ip_name.setError(null);
-            ip_email.setError(null);
-            return;
-        }
-        if (et_city.getText().toString().isEmpty()) {
-            ip_city.setError("please enter city");
-            ip_role.setError(null);
-            ip_password.setError(null);
-            ip_mobile.setError(null);
-            ip_name.setError(null);
-            ip_email.setError(null);
-            return;
-        }
+
+
         if (et_role_no.getText().toString().isEmpty()) {
             ip_role.setError("please select role");
-            ip_password.setError(null);
             ip_mobile.setError(null);
             ip_name.setError(null);
             ip_email.setError(null);
             return;
         }
-        addEmployeeRequest.setCompanyId(MyApp.user.getCompanyId());
-        addEmployeeRequest.setName(et_name.getText().toString());
-        addEmployeeRequest.setPassword(et_password.getText().toString());
-        addEmployeeRequest.setEmail(emailText);
-        addEmployeeRequest.setMobile(phoneText);
-        addEmployeeRequest.setRoleId(role_id);
-        addEmployeeRequest.setCity(et_city.getText().toString());
-        hitAddEmployeeApi(addEmployeeRequest);
+        editEmployeeRequest.setUserId(employees.getUserId());
+        editEmployeeRequest.setName(et_name.getText().toString());
+        editEmployeeRequest.setEmail(emailText);
+        editEmployeeRequest.setMobile(phoneText);
+        editEmployeeRequest.setRoleId(role_id);
+        hitAddEmployeeApi(editEmployeeRequest);
     }
 
-    private void hitAddEmployeeApi(AddEmployeeRequest addEmployeeRequest) {
+    private void hitAddEmployeeApi(EditEmployeeRequest addEmployeeRequest) {
         if (!NetworkUtil.getInstance(instance).isConnected()) {
             ToastUtils.show(instance, "No internet");
             return;
@@ -195,10 +176,9 @@ public class AddEmplyoyeeActivity extends AppCompatActivity {
         Gson gson = new Gson();
         String json = gson.toJson(addEmployeeRequest);
         Log.d("myTag", json);
-        Call<ResponseModel<String>> call;
-        loder = DialogUtils.showLoader(this);
 
-            call = RestServiceFactory.createServiceUser().addEmployee(addEmployeeRequest);
+        loder = DialogUtils.showLoader(this);
+        Call<ResponseModel<String>> call = RestServiceFactory.createServiceUser().editEmployee(addEmployeeRequest);
 
 
         call.enqueue(new RestCallBack<ResponseModel<String>>(instance) {
@@ -225,17 +205,13 @@ public class AddEmplyoyeeActivity extends AppCompatActivity {
         img_back = findViewById(R.id.img_back);
         chk_active = findViewById(R.id.chk_active);
         btn_save = findViewById(R.id.btn_save);
-        et_city = findViewById(R.id.et_city);
         et_name = findViewById(R.id.et_name);
         et_mobile = findViewById(R.id.et_mobile);
         et_email = findViewById(R.id.et_email);
-        et_password = findViewById(R.id.et_password);
         et_role_no = findViewById(R.id.et_role_no);
         ip_name = findViewById(R.id.ip_name);
         ip_mobile = findViewById(R.id.ip_mobile);
         ip_email = findViewById(R.id.ip_email);
-        ip_password = findViewById(R.id.ip_password);
-        ip_city = findViewById(R.id.ip_city);
         ip_role = findViewById(R.id.ip_role);
     }
 }

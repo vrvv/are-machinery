@@ -1,6 +1,8 @@
 package com.are.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +11,10 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.are.R;
+import com.are.activities.AddEmplyoyeeActivity;
+import com.are.activities.EditEmplyoeeActivity;
 import com.are.model.Employees;
+import com.are.model.rest_request.EditEmployeeRequest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +54,16 @@ public class EmployeeAdapter extends
             holder.tv_inactive.setVisibility(View.VISIBLE);
 
         }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, EditEmplyoeeActivity.class);
+                intent.putExtra("employees", itemsArrayList.get(position));
+                mContext.startActivity(intent);
+
+            }
+        });
 
     }
 

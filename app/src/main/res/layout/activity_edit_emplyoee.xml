@@ -27,7 +27,7 @@
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/img_back"
             android:fontFamily="@font/poppins_semibold"
-            android:text="Add Employees"
+            android:text="Edit Employees"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
@@ -144,60 +144,6 @@
                             android:inputType="textEmailAddress" />
                     </com.are.ui.NoChangingBackgroundTextInputLayout>
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:text="Password"
-                        android:textColor="#323C4E"
-                        android:textSize="14dp" />
-
-                    <com.are.ui.NoChangingBackgroundTextInputLayout
-                        android:id="@+id/ip_password"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
-                        app:boxBackgroundMode="none"
-                        app:errorEnabled="false"
-                        app:hintAnimationEnabled="false"
-                        app:hintEnabled="false"
-                        app:passwordToggleEnabled="true">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/et_password"
-                            style="@style/EditTextThemeEnquiry"
-                            android:background="@drawable/rounded_black_ring"
-                            android:hint="Enter password"
-                            android:inputType="textPassword" />
-                    </com.are.ui.NoChangingBackgroundTextInputLayout>
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:text="City"
-                        android:textColor="#323C4E"
-                        android:textSize="14dp" />
-
-                    <com.are.ui.NoChangingBackgroundTextInputLayout
-                        android:id="@+id/ip_city"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
-                        app:boxBackgroundMode="none"
-                        app:errorEnabled="false"
-                        app:hintAnimationEnabled="false"
-                        app:hintEnabled="false">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/et_city"
-                            style="@style/EditTextThemeEnquiry"
-                            android:background="@drawable/rounded_black_ring"
-                            android:hint="Enter city"
-                            android:singleLine="true"/>
-                    </com.are.ui.NoChangingBackgroundTextInputLayout>
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="match_parent"

@@ -55,13 +55,14 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/tv_description"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/_10sdp"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:layout_marginRight="@dimen/_10sdp"
                         android:fontFamily="@font/pangram_regular"
-                        android:text="My Dozer 1996 model is for sale. 250 hours driven"
+                        tools:text="My Dozer 1996 model is for sale. 250 hours driven"
                         android:textColor="#111214"
                         android:textSize="12sp" />
 
@@ -115,7 +116,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/pangram_medium"
                             android:gravity="center"
-                            android:text="$24,50,500"
+                            tools:text="$24,50,500"
                             android:textColor="#FA4738"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -135,7 +136,7 @@
                         android:layout_marginRight="@dimen/_10sdp"
                         android:fontFamily="@font/poppins_medium"
                         android:gravity="right"
-                        android:text="Sri Vittal Shah Enterprises "
+                        tools:text="Sri Vittal Shah Enterprises "
                         android:textColor="#2A71FD"
                         android:textSize="14sp" />
 
@@ -161,10 +162,11 @@
                             android:src="@drawable/icon_time" />
 
                         <TextView
+                            android:id="@+id/tv_year"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/poppins_medium"
-                            android:text="Member Since 2019"
+                            tools:text="Member Since 2019"
                             android:textColor="#637699"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -190,7 +192,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/poppins_medium"
-                            android:text="Vijayawada, Andhra Pradesh"
+                            tools:text="Vijayawada, Andhra Pradesh"
                             android:textColor="#637699"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -270,7 +272,7 @@
                             android:layout_marginLeft="@dimen/_20sdp"
                             android:layout_weight="0.5"
                             android:fontFamily="@font/poppins_medium"
-                            android:text="TR-852525"
+                            tools:text="TR-852525"
                             android:textColor="#555D6A"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -301,7 +303,7 @@
                             android:layout_marginLeft="@dimen/_20sdp"
                             android:layout_weight="0.5"
                             android:fontFamily="@font/poppins_medium"
-                            android:text="99"
+                            tools:text="99"
                             android:textColor="#555D6A"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -333,7 +335,7 @@
                             android:layout_marginLeft="@dimen/_20sdp"
                             android:layout_weight="0.5"
                             android:fontFamily="@font/poppins_medium"
-                            android:text="TATA HITACHI"
+                            tools:text="TATA HITACHI"
                             android:textColor="#555D6A"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -365,7 +367,7 @@
                             android:layout_marginLeft="@dimen/_20sdp"
                             android:layout_weight="0.5"
                             android:fontFamily="@font/poppins_medium"
-                            android:text="1996"
+                            tools:text="1996"
                             android:textColor="#555D6A"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -397,7 +399,7 @@
                             android:layout_marginLeft="@dimen/_20sdp"
                             android:layout_weight="0.5"
                             android:fontFamily="@font/poppins_medium"
-                            android:text="280KM"
+                            tools:text="280KM"
                             android:textColor="#555D6A"
                             android:textSize="12sp" />
                     </LinearLayout>

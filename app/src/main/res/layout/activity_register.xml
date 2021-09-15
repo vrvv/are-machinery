@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/light_blue_gradiant"
     android:orientation="vertical"
-    tools:context=".activities.LoginActivity">
+    tools:context=".activities.RegisterActivity">
 
     <RelativeLayout
         android:id="@+id/toolbar"
@@ -197,23 +197,24 @@
                 android:text="Location"
                 android:textColor="#323C4E"
                 android:textSize="12dp"
-                android:visibility="gone" />
+                />
 
             <com.are.ui.NoChangingBackgroundTextInputLayout
+                android:id="@+id/ip_location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
-                android:visibility="gone"
                 app:boxBackgroundMode="none"
                 app:errorEnabled="false"
                 app:hintAnimationEnabled="false"
                 app:hintEnabled="false">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_location"
                     style="@style/EditTextTheme"
                     android:background="@drawable/rounded_white_bg"
-                    android:drawableLeft="@drawable/icon_password"
+                    android:drawableLeft="@drawable/icon_location"
                     android:drawablePadding="@dimen/_10sdp"
                     android:hint="Enter your Location"
                     android:inputType="textPassword" />

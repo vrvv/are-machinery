@@ -64,8 +64,17 @@ public class AddEmployeeRequest implements Serializable {
         this.city = city;
     }
 
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
+
     public String email = "";
     public String mobile = "";
     public String password = "";
     public int roleId;
+    public boolean isActive;
 }

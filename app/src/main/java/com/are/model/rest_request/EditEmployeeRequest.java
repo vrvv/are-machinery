@@ -2,10 +2,8 @@ package com.are.model.rest_request;
 
 import java.io.Serializable;
 
-public class RegisterRequest implements Serializable {
+public class EditEmployeeRequest implements Serializable {
     public String name = "";
-    public int companyId;
-    public String companyName = "";
 
     public String getName() {
         return name;
@@ -15,21 +13,6 @@ public class RegisterRequest implements Serializable {
         this.name = name;
     }
 
-    public int getCompanyId() {
-        return companyId;
-    }
-
-    public void setCompanyId(int companyId) {
-        this.companyId = companyId;
-    }
-
-    public String getCompanyName() {
-        return companyName;
-    }
-
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
-    }
 
     public String getEmail() {
         return email;
@@ -55,18 +38,15 @@ public class RegisterRequest implements Serializable {
         this.password = password;
     }
 
-    public String email = "";
-    public String GSTIN = "";
-
-    public String getGSTIN() {
-        return GSTIN;
+    public int getRoleId() {
+        return roleId;
     }
 
-    public void setGSTIN(String GSTIN) {
-        this.GSTIN = GSTIN;
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
     }
 
-    public String mobile = "";
+    public String city = "";
 
     public String getCity() {
         return city;
@@ -76,6 +56,27 @@ public class RegisterRequest implements Serializable {
         this.city = city;
     }
 
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
+
+    public String email = "";
+    public String mobile = "";
     public String password = "";
-    public String city = "";
+    public int roleId;
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public int userId;
+    public boolean isActive;
 }

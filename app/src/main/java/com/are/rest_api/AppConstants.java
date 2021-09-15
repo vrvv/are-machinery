@@ -44,5 +44,9 @@ public class AppConstants {
 
         public static final String MY_EMPLOYEE = "/employees/list/{companyId}";
         public static final String ADD_EMPLOYEE = "/employee/add";
+        public static final String EDIT_EMPLOYEE = "/employee/update";
+        public static final String CONTENT = "/content/{type}";
+
+        public static final String EDIT_DETAIL = "/user/update";
     }
 }

@@ -54,7 +54,7 @@ public class ProductDetailActivity extends AppCompatActivity {
     ArrayList<String> dashboardImageArrayList = new ArrayList<>();
     public AppCompatButton btn_enquiry;
     public Items items;
-    public TextView tvname, tvUnitPrice, tvCompanyName, tvLocation, tvModel, tvBrand, tvYear, tvFunction;
+    public TextView tvname, tvUnitPrice, tvCompanyName, tvLocation, tvModel, tvBrand, tvYear,tv_year, tvFunction,tv_description;
     public BottomSheetDialog mBottomSheetEnquire, mBottomSheetEnquireSuccess;
     public AddEnquiryRequest addEnquiryRequest;
     public Dialog loder;
@@ -79,6 +79,8 @@ public class ProductDetailActivity extends AppCompatActivity {
         btn_enquiry = findViewById(R.id.btn_enquiry);
         sliderView = findViewById(R.id.imageSlider);
         tvUnitPrice = findViewById(R.id.tvUnitPrice);
+        tv_year = findViewById(R.id.tv_year);
+        tv_description = findViewById(R.id.tv_description);
         tvCompanyName = findViewById(R.id.tvCompanyName);
         tvname = findViewById(R.id.tvname);
         tvLocation = findViewById(R.id.tvLocation);
@@ -309,6 +311,8 @@ public class ProductDetailActivity extends AppCompatActivity {
                     tvModel.setText(response.data.getModel());
                     tvBrand.setText(response.data.getBrand());
                     tvYear.setText(response.data.getYear());
+                    tv_description.setText(response.data.getDescription());
+                    tv_year.setText("Member Since "+response.data.getYear());
                     tvFunction.setText(response.data.getFunctional() + " " + response.data.getFunctionalType());
                 } else {
                     ToastUtils.show(instance, response.message);

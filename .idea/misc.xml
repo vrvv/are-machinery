@@ -5,25 +5,43 @@
       <map>
         <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/drawable/btn_rounded_dark_gray.xml" value="0.2" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/drawable/light_blue_gradiant.xml" value="0.2" />
-        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_add_emplyoyee.xml" value="0.12" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/drawable/rounded_light_red_btn.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/drawable/toast_rect.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_add_emplyoyee.xml" value="0.22" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_change_pass.xml" value="0.25" />
-        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_dashboard.xml" value="0.12454710144927536" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_contact.xml" value="0.21" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_contant.xml" value="0.18" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_dashboard.xml" value="0.22" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_edit_detail.xml" value="0.17753623188405798" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_edit_emplyoee.xml" value="0.17753623188405798" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_employees_list.xml" value="0.13858695652173914" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_enquire.xml" value="0.10643115942028986" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_enter_mobile.xml" value="0.25" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_forgot_pass.xml" value="0.21" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_forgot_pass1.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_forgot_verify_otp.xml" value="0.33" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_history.xml" value="0.10643115942028986" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_login.xml" value="0.2" />
-        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_my_item_detail.xml" value="0.15307971014492755" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_machinery.xml" value="0.10643115942028986" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_main.xml" value="0.1621376811594203" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_my_item.xml" value="0.10643115942028986" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_my_item_detail.xml" value="0.25" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_o_t_p.xml" value="0.18" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_product_detail.xml" value="0.25" />
-        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_register.xml" value="0.15" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_register.xml" value="0.22" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_sell.xml" value="0.21" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_sell_type.xml" value="0.13541666666666666" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_setup_password.xml" value="0.14447463768115942" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_splash.xml" value="0.14447463768115942" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/activity_verify.xml" value="0.1" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/bottom_enquiry_success.xml" value="0.18" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/dailog_logout.xml" value="0.17" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/fragment_navigation_drawer.xml" value="0.21" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/otp_layout.xml" value="0.13269927536231885" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/view_employees.xml" value="0.14628623188405798" />
         <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/view_images.xml" value="0.11413043478260869" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/view_products.xml" value="0.10643115942028986" />
+        <entry key="..\:/Users/abc/AndroidStudioProjects/ARE/app/src/main/res/layout/view_recommended_machinary.xml" value="0.10643115942028986" />
       </map>
     </option>
   </component>
