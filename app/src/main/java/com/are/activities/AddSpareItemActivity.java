@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -69,6 +70,7 @@ public class AddSpareItemActivity extends AppCompatActivity {
     public TextView tvVideoUpload;
     public Dialog loder;
     public ImageView img_back;
+    public VideoView videoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -198,8 +200,11 @@ public class AddSpareItemActivity extends AppCompatActivity {
             if (requestCode == SELECT_VIDEO) {
                 System.out.println("SELECT_VIDEO");
                 Uri selectedImageUri = data.getData();
-                tvVideoUpload.setVisibility(View.VISIBLE);
+//                tvVideoUpload.setVisibility(View.VISIBLE);
+                videoView.setVisibility(View.VISIBLE);
                 generateVideoName();
+                videoView.setVideoURI(selectedImageUri);
+                videoView.start();
                 goforVideoIt();
             }
             if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
@@ -473,6 +478,7 @@ public class AddSpareItemActivity extends AppCompatActivity {
         ip_quantity = findViewById(R.id.ip_quantity);
         ip_unit_price = findViewById(R.id.ip_unit_price);
         ip_description = findViewById(R.id.ip_description);
+        videoView = findViewById(R.id.videoView);
     }
 
 

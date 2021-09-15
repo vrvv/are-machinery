@@ -58,6 +58,12 @@ public class EmployeesListActivity extends AppCompatActivity {
         hitEmployeeApi();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        hitEmployeeApi();
+    }
+
     private void hitEmployeeApi() {
         Call<ResponseModel<List<Employees>>> callStates = RestServiceFactory.createServiceUser().getMyEmployee(MyApp.user.getCompanyId());
 
