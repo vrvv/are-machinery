@@ -54,7 +54,7 @@ public class SetupPasswordActivity extends AppCompatActivity {
         String pass = et_password.getText().toString();
         String re_pass = et_re_password.getText().toString();
         if (pass.isEmpty()) {
-            ip_password.setError("please enter password");
+            ip_password.setError("Please enter password");
             return;
         }
         if (re_pass.isEmpty()) {

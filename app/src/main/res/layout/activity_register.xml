@@ -217,7 +217,7 @@
                     android:drawableLeft="@drawable/icon_location"
                     android:drawablePadding="@dimen/_10sdp"
                     android:hint="Enter your Location"
-                    android:inputType="textPassword" />
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ " />
             </com.are.ui.NoChangingBackgroundTextInputLayout>
 
             <androidx.appcompat.widget.AppCompatTextView

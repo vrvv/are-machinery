@@ -73,6 +73,7 @@
                     android:background="@drawable/rounded_white_bg"
                     android:drawableLeft="@drawable/icon_user"
                     android:drawablePadding="@dimen/_10sdp"
+                    android:singleLine="true"
                     android:hint="Enter your Email/Mobile" />
             </com.are.ui.NoChangingBackgroundTextInputLayout>
 

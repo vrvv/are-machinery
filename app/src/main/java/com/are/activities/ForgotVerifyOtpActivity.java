@@ -77,11 +77,11 @@ public class ForgotVerifyOtpActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String otpInput = otpView.getOTP().toString().trim();
                 if (otpInput.isEmpty()) {
-                    ToastUtils.show(context, "Please enter otp");
+                    ToastUtils.show(context, "Please Enter OTP");
                     return;
                 }
                 if (!otpInput.equals(otpText)) {
-                    ToastUtils.show(context, "Please enter correct otp");
+                    ToastUtils.show(context, "Please Enter Correct OTP");
                     return;
                 }
                 if (!NetworkUtil.getInstance(context).isConnected()) {
